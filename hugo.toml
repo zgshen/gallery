@@ -1,0 +1,10 @@
+title = '甘甘的相册'
+theme = 'gallery'
+copyright = "© Licorice"
+defaultContentLanguage = "en"
+disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+languageCode = "en"
+timeZone = "Europe/Berlin"
+timeout = "120s"
+
