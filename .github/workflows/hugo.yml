@@ -21,7 +21,10 @@ jobs:
           extended: true  # 如果您使用了 Hugo Extended 版本
 
       - name: Build
-        run: hugo --minify
+        run: |
+          hugo --minify
+          ls -la public
+          cat public/index.html || echo "index.html not found"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
