@@ -1,0 +1,14 @@
+
+.pswp {
+    --pswp-bg: #f6f6f6;
+    font-size: x-small;
+    font-weight: 600;
+}
+
+.pswp__dynamic-caption {
+    color: #0e0e0e;
+}
+
+.pswp__dynamic-caption--mobile {
+    background: #f6f6f6;
+}
