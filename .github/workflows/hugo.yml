@@ -22,11 +22,7 @@ jobs:
 
       - name: Build
         run: |
-          hugo --minify
-          ls -la
-          echo "debug..."
-          ls -la public
-          cat public/index.html || echo "index.html not found"
+          hugo --minify -D
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
