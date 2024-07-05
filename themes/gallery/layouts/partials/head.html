@@ -7,10 +7,15 @@
   <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}" />
   <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relURL }}" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="zguishen gallery" />
+  <meta property="og:title" content="zguishen's gallery" />
   <meta property="og:description" content="甘甘的相册" />
   <meta property="og:url" content="https://gallery.zguishen.com/" />
   <meta property="og:image" content="https://blog.zguishen.com/images/blog/avatar.jpeg" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@licorice128">
+  <meta name="twitter:title" content="zguishen's gallery">
+  <meta name="twitter:description" content="相册" />
+  <meta name="twitter:image" content="https://blog.zguishen.com/images/blog/avatar.jpeg">
 
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}" />
   {{ if .Params.keywords }}
