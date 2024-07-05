@@ -23,7 +23,6 @@ jobs:
       - name: Build
         run: |
           hugo --minify -D
-          echo "gallery.zguishen.com" > CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
