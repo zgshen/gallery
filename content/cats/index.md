@@ -1,12 +1,12 @@
 ---
 description: 拍各种猫猫
-featured_image: DSC04334-1.jpg
+featured_image: 20211209-P1000522.jpg
 menus: "main"
-sort_by: Date # Exif.Date
+sort_by: Name
 sort_order: desc
 title: 猫
 #type: gallery
-weight: 3
+weight: 2
 params:
   theme: white
 resources:

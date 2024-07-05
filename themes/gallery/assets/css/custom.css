@@ -12,3 +12,7 @@
 .pswp__dynamic-caption--mobile {
     background: #f6f6f6;
 }
+
+.pswp__button--download-button {
+    display: none;
+}
