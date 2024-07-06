@@ -20,4 +20,6 @@ resources:
     title: 猎德大桥
   - src: 20240528-DSC03509.jpg
     title: 花城广场
+  - src: 20240705-DSC05283.jpg
+    title: 宏城公园
 ---
