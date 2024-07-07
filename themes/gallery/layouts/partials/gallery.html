@@ -19,9 +19,15 @@
             {{ end }}
           {{ end }}
 
+          {{/* 手动镜头可能不会记录焦段和光圈值 */}}
+          {{ $len35 := .FocalLengthIn35mmFilm }}
+          {{ if not $len35 }}{{ $len35 = 0 }}{{ end }}
+          {{ $fn := .FNumber }}
+          {{ if not $fn }}{{ $fn = 0.0 }}{{ end }}
+          
           {{/* Title from EXIF Info */}}
           {{ $title = printf "%s %s <br> %dmm f/%.2g %ssec ISO %d <br><br> %s<br><br> %s" 
-          .Make .Model .FocalLengthIn35mmFilm .FNumber .ExposureTime .ISOSpeedRatings .DateTimeOriginal
+          .Make .Model $len35 $fn .ExposureTime .ISOSpeedRatings .DateTimeOriginal
           $wTitle}}
         {{ end }}
       {{ end }}
