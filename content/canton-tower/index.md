@@ -13,7 +13,7 @@ resources:
   - src: 20230706-P1030800.jpg
     title: 火炉山华南快速观景台
   - src: 20231120-P1070501.jpg
-    title: 麓湖公园-鸿鹄楼
+    title: 白云山脚——麓湖公园——鸿鹄楼
   - src: 20230918-P1050347.jpg
     title: 白云山-濂泉门
   - src: 20240610-DSC04351.jpg
@@ -22,4 +22,6 @@ resources:
     title: 花城广场
   - src: 20240705-DSC05283.jpg
     title: 宏城公园
+  - src: 20240705-DSC05291.jpg
+    title: 宏城公园的...洗手间
 ---
