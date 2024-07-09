@@ -25,9 +25,12 @@
           {{ $fn := .FNumber }}
           {{ if not $fn }}{{ $fn = 0.0 }}{{ end }}
           
+		  {{/* 时间 */}}
+		  {{ $time := .DateTimeOriginal.Format "2006-01-02 15:04:05" }}
+		  
           {{/* Title from EXIF Info */}}
           {{ $title = printf "%s %s <br> %dmm f/%.2g %ssec ISO %d <br><br> %s<br><br> %s" 
-          .Make .Model $len35 $fn .ExposureTime .ISOSpeedRatings .DateTimeOriginal
+          .Make .Model $len35 $fn .ExposureTime .ISOSpeedRatings $time
           $wTitle}}
         {{ end }}
       {{ end }}
