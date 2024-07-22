@@ -24,4 +24,12 @@ resources:
     title: 黑沙海滩
   - src: 20231011-P1060205.jpg
     title: 维多利亚港
+  - src: 20240721-DSC06188.jpg
+    title: 琶洲塔
+  - src: 20240605-DSC03686.jpg
+    title: 车陂涌
+  - src: 20240710-DSC05809.jpg
+    title: 流花湖公园
+  - src: 20240721-DSC06188.jpg
+    title: 琶洲塔
 ---
