@@ -32,4 +32,6 @@ resources:
     title: 流花湖公园
   - src: 20240721-DSC06188.jpg
     title: 琶洲塔
+  - src: 20240721-DSC06094.jpg
+    title: 这是假的荷花...
 ---
