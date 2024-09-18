@@ -28,4 +28,6 @@ resources:
     title: 花城广场 | 王老吉
   - src: 20240721-DSC06209.jpg
     title: 琶洲大桥
+  - src: 20240917-DSC07781.jpg
+    title: 在滨江中路拍海印大桥
 ---
