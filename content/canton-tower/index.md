@@ -6,7 +6,7 @@ featured: true
 private: true # do not show in list, only as feature
 sort_by: Name
 sort_order: desc
-description: 广州塔机位
+description: 拍广州塔某种意义上就是在拍广州。
 resources:
   - src: 20211110-P1000364.jpg
     title: 海珠湖
