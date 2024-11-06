@@ -8,5 +8,5 @@ title: 动物
 #type: gallery
 weight: 3
 params:
-  theme: white
+  theme: dark
 ---

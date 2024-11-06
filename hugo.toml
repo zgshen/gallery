@@ -8,3 +8,5 @@ languageCode = "en"
 timeZone = "Europe/Berlin"
 timeout = "120s"
 
+[params]
+  defaultTheme = "dark"

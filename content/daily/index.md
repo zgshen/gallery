@@ -8,7 +8,7 @@ sort_order: desc
 #type: gallery
 weight: 1
 params:
-  theme: white
+  theme: dark
 resources:
   - src: 20240308-DSC00976-1.jpg
     title: 滇池
