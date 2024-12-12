@@ -48,7 +48,21 @@
     {{ end }}
     {{ range sort $images (.Params.sort_by | default "Name") (.Params.sort_order | default "asc") }}
       {{ $image := .image }}
-      {{ $thumbnail := $image.Filter (slice images.AutoOrient (images.Process "fit 600x600")) }}
+
+      {{ $origRatio := div (float $image.Width) (float $image.Height) }}
+      {{ $thumbnail := $image }}
+      {{/* 1.5 冗余 1.48 */}}
+      {{ if ge $origRatio 1.48 }}
+        {{ $width := math.Round (mul $image.Height 1.5) }}
+        {{ $height := $image.Height }}
+        {{ $thumbnail = $image.Crop (printf "%dx%d center" (int $width) (int $height)) }}
+      {{ else }}
+        {{ $width := $image.Width }}
+        {{ $height := math.Round (div $width 1.5) }}
+        {{ $thumbnail = $image.Crop (printf "%dx%d center" (int $width) (int $height)) }}
+      {{ end }}
+      {{ $thumbnail = $thumbnail.Filter (slice images.AutoOrient (images.Process "fit 600x600")) }}
+
       {{ $full := $image.Filter (slice images.AutoOrient (images.Process "fit 1600x1600")) }}
       {{ $color := index $thumbnail.Colors 0 | default "transparent" }}
       <a class="gallery-item" href="{{ $image.RelPermalink }}" data-pswp-src="{{ $full.RelPermalink }}" data-pswp-width="{{ $full.Width }}" data-pswp-height="{{ $full.Height }}" itemscope itemtype="https://schema.org/ImageObject" style="aspect-ratio: {{ $thumbnail.Width }} / {{ $thumbnail.Height }}">
