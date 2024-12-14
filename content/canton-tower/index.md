@@ -30,4 +30,6 @@ resources:
     title: 琶洲大桥
   - src: 20240917-DSC07781.jpg
     title: 在滨江中路拍海印大桥
+  - src: 20241128-DSC02498.jpg
+    title: 异木棉的季节，从海珠湖看珠江新城。
 ---
