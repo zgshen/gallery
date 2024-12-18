@@ -12,4 +12,6 @@ params:
 resources:
   - src: 20230426-P1020742.jpg
     title: 大三巴牌坊。
+  - src: 20230426-P1020800.jpg
+    title: 东望洋机位。
 ---
