@@ -32,4 +32,6 @@ resources:
     title: 城中村的天空。
   - src: 20241128-DSC02370.jpg
     title: 海珠湖。
+  - src: 20241219-DSC04641.jpg
+    title: 农讲所。
 ---
