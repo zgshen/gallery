@@ -34,4 +34,24 @@ resources:
     title: 海珠湖。
   - src: 20241219-DSC04641.jpg
     title: 农讲所。
+  - src: 20241219-DSC04490.jpg
+    title: 按摩店，嘉年华芬兰馆。
+  - src: 20241219-DSC04203.jpg
+    title: 省港大罢工纪念馆。
+  - src: 20241219-DSC04209.jpg
+    title: 111路已退役非空调无轨电车。
+  - src: 20241219-DSC04216.jpg
+    title: 粉色骑楼（1）。
+  - src: 20241219-DSC04219.jpg
+    title: 粉色骑楼（2）。
+  - src: 20241219-DSC04548.jpg
+    title: 鲁迅纪念馆。
+  - src: 20241219-DSC04640.jpg
+    title: 省图书馆。
+  - src: 20241219-DSC04983.jpg
+    title: 北京路。
+  - src: 20241219-DSC05026.jpg
+    title: 动漫星城。
+  - src: 20241219-DSC05085.jpg
+    title: 大佛寺。
 ---
