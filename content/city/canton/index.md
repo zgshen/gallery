@@ -54,4 +54,12 @@ resources:
     title: 动漫星城。
   - src: 20241219-DSC05085.jpg
     title: 大佛寺。
+  - src: 20241201-DSC03250.jpg
+    title: 人称”双鸭山大学“。
+  - src: 20241127-DSC02365.jpg
+    title: 城中村租房告示。
+  - src: 20241118-DSC01000.jpg
+    title: 广州动物园，工人正在安装摩天轮。
+  - src: 20241130-DSC03005.jpg
+    title: 科韵路，看到中间的网易大厦了吗。
 ---
