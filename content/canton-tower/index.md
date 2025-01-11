@@ -32,4 +32,14 @@ resources:
     title: 在滨江中路拍海印大桥
   - src: 20241128-DSC02498.jpg
     title: 异木棉的季节，从海珠湖看珠江新城。
+  - src: 20250107-DSC08007.jpg
+    title: 广州大剧院
+  - src: 20250107-DSC08024.jpg
+    title: 花城汇
+  - src: 20250107-DSC08033.jpg
+    title: 广州塔广场
+  - src: 20250107-DSC08049.jpg
+    title: 广州塔广场
+  - src: 20250107-DSC08195.jpg
+    title: 广州塔广场
 ---
