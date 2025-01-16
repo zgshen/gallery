@@ -62,4 +62,6 @@ resources:
     title: 广州动物园，工人正在安装摩天轮。
   - src: 20241130-DSC03005.jpg
     title: 科韵路，看到中间的网易大厦了吗。
+  - src: 20250107-DSC08300.jpg
+    title: 海心桥。
 ---
