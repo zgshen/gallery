@@ -42,4 +42,8 @@ resources:
     title: 广州塔广场
   - src: 20250107-DSC08195.jpg
     title: 广州塔广场
+  - src: 20250224-DSC00924.jpg
+    title: 白云山息亭
+  - src: 20250224-DSC00928.jpg
+    title: 白云山息亭
 ---
