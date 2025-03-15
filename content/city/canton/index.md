@@ -64,4 +64,10 @@ resources:
     title: 科韵路，看到中间的网易大厦了吗。
   - src: 20250107-DSC08300.jpg
     title: 海心桥。
+  - src: 20241118-DSC01000.jpg
+    title: 农讲所-珠江·星火1926。
+  - src: 20241130-DSC03005.jpg
+    title: 农讲所-珠江·星火1926。
+  - src: 20250107-DSC08300.jpg
+    title: 东山口。
 ---
