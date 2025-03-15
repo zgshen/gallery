@@ -5,6 +5,7 @@ categories: ["city"]
 featured_image: 20211209-P1000470.jpg
 sort_by: Name
 sort_order: desc
+menus: "main"
 #type: gallery
 weight: 1
 params:

@@ -1,10 +1,10 @@
 title = '甘甘的相册'
 theme = 'gallery'
 copyright = "© Licorice"
-defaultContentLanguage = "en"
+defaultContentLanguage = "zh"
 disableKinds = ["taxonomy", "term"]
 enableRobotsTXT = true
-languageCode = "en"
+languageCode = "zh"
 timeZone = "Europe/Berlin"
 timeout = "120s"
 
