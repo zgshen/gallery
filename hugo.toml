@@ -9,4 +9,4 @@ timeZone = "Europe/Berlin"
 timeout = "120s"
 
 [params]
-  defaultTheme = "dark"
+  defaultTheme = "light"

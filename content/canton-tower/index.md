@@ -1,7 +1,7 @@
 ---
 date: 2024-07-03
 featured_image: 20211110-P1000364.jpg
-title: 广州塔
+title: 塔
 featured: true
 private: true # do not show in list, only as feature
 sort_by: Name

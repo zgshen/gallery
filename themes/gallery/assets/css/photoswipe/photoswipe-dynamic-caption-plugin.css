@@ -1,5 +1,5 @@
 .pswp__dynamic-caption {
-  color: #fff;
+  color: var(--text-1);
   position: absolute;
   width: 100%;
   left: 0;

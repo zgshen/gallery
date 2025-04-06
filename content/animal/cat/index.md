@@ -7,8 +7,6 @@ sort_order: desc
 title: 猫
 #type: gallery
 weight: 1
-params:
-  theme: dark
 resources:
   - src: 20240610-DSC04335.jpg
     title: 猎德大桥上的猫咪

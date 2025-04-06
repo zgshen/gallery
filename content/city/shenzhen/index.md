@@ -7,8 +7,6 @@ sort_by: Name
 sort_order: desc
 #type: gallery
 weight: 2
-params:
-  theme: dark
 resources:
   - src: 20231011-P1060161.jpg
     title: 在深圳湾口岸看春笋大厦。

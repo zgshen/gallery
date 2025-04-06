@@ -1,7 +1,7 @@
 /*! PhotoSwipe main CSS by Dmytro Semenov | photoswipe.com */
 
 .pswp {
-  --pswp-bg: #000;
+  --pswp-bg: var(--surface-1);
   --pswp-placeholder-bg: #222;
   
 

@@ -8,8 +8,6 @@ sort_order: desc
 menus: "main"
 #type: gallery
 weight: 1
-params:
-  theme: dark
 resources:
   - src: 20241128-DSC02498.jpg
     title: 异木棉的季节，从海珠湖看珠江新城。
