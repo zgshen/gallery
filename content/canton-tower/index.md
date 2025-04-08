@@ -52,5 +52,4 @@ resources:
     title: 东山湖公园
   - src: 20240305-DSC00072.jpg
     title: 广州艺术博物院
-	
 ---
