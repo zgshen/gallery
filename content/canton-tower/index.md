@@ -46,4 +46,11 @@ resources:
     title: 白云山息亭
   - src: 20250224-DSC00928.jpg
     title: 白云山息亭
+  - src: 20250326-DSC02401.jpg
+    title: 大塘
+  - src: 20250402-DSC02772.jpg
+    title: 东山湖公园
+  - src: 20240305-DSC00072.jpg
+    title: 广州艺术博物院
+	
 ---
