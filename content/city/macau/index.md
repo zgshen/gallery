@@ -12,4 +12,6 @@ resources:
     title: 大三巴牌坊。
   - src: 20230426-P1020800.jpg
     title: 东望洋机位。
+  - src: 20250321-DSC01629.jpg
+    title: 新美安大厦。
 ---
