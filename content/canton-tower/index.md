@@ -52,4 +52,8 @@ resources:
     title: 东山湖公园
   - src: 20240305-DSC00072.jpg
     title: 广州艺术博物院
+  - src: 20250414-DSC03431.jpg
+    title: 海心沙
+  - src: 20250414-DSC03475.jpg
+    title: 海心沙
 ---
