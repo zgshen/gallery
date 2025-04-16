@@ -56,4 +56,8 @@ resources:
     title: 海心沙
   - src: 20250414-DSC03475.jpg
     title: 海心沙
+  - src: 20250415-DSC03482.jpg
+    title: 海心沙夜晚
+  - src: 20250415-DSC03483.jpg
+    title: 海心沙夜晚
 ---
