@@ -58,6 +58,8 @@ resources:
     title: 海心沙
   - src: 20250415-DSC03482.jpg
     title: 海心沙夜晚
-  - src: 20250415-DSC03483.jpg
-    title: 海心沙夜晚
+  - src: 20250414-DSC03412.jpg
+    title: 沙尘天（0413-0415从蒙古国吹来的沙尘，罕见的天气）
+  - src: 20250422-DSC03956.jpg
+    title: 海珠湖园丁在给格桑花海浇水
 ---
