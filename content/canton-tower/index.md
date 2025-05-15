@@ -53,11 +53,11 @@ resources:
   - src: 20240305-DSC00072.jpg
     title: 广州艺术博物院
   - src: 20250414-DSC03431.jpg
-    title: 海心沙
+    title: 海心沙亚运公园
   - src: 20250414-DSC03475.jpg
-    title: 海心沙
+    title: 海心沙晏昼
   - src: 20250415-DSC03482.jpg
-    title: 海心沙夜晚
+    title: 海心沙晚黑
   - src: 20250414-DSC03412.jpg
     title: 沙尘天（0413-0415从蒙古国吹来的沙尘，罕见的天气）
   - src: 20250422-DSC03956.jpg
