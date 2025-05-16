@@ -30,7 +30,7 @@ resources:
     title: 宏城公园的...洗手间
   - src: 20240528-DSC03509.jpg
     title: 花城广场 | 王老吉
-  - src: 20240528-DSC03509.jpg
+  - src: 20240705-DSC05459.jpg
     title: 已绝版机位，有轨电车塔下段已拆除
   - src: 20240705-DSC05346.jpg
     title: 海心沙亚运公园
@@ -66,9 +66,7 @@ resources:
     title: 白云山息亭
   - src: 20250326-DSC02401.jpg
     title: 大塘
-  - src: 20250326-DSC02405.jpg
-    title: 大塘
-  - src: 20250326-DSC02406.jpg
+  - src: 20250326-DSC02605.jpg
     title: 大塘
   - src: 20250402-DSC02772.jpg
     title: 东山湖公园
