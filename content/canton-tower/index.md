@@ -84,4 +84,6 @@ resources:
     title: 海珠湖园丁在给格桑花海浇水
   - src: 20241128-DSC02497.jpg
     title: 海珠湖的异木棉
+  - src: 20250625-DSC08673.jpg
+    title: 天文大潮，周周乐群众文化广场
 ---
