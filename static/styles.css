@@ -1,0 +1,292 @@
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, fieldset, legend, label, table, header, footer, nav, section, figure {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: white;
+  font-family: "myriad-pro","Myriad Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  color: #282B30;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga", "kern";
+}
+
+figure {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: #3169B3;
+}
+a:hover {
+  color: #C00;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+p {
+  margin: 0 0 12px;
+}
+ul {
+  list-style: disc;
+}
+ul, ol {
+  padding: 0;
+  margin: 0 0 12px 25px;
+}
+li {
+  margin: 0 0 12px 0;
+}
+h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 35px;
+  line-height: 1;
+  margin: 1em;
+  font-weight: 600;
+  text-align: center;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #282B30;
+}
+
+strong {
+  font-weight: 600;
+}
+
+figcaption {
+  display:none;
+}
+
+.container {
+  width: 100%;
+}
+
+.content {
+  max-width: 50vw;
+  margin: 24px auto;
+}
+@media (max-width: 768px) {
+    .content {
+        max-width: 100vw;
+    }
+}
+
+#menu {
+  width: 100%;
+  background: #F7F7F7 none repeat scroll 0 0;
+  padding: 30px 0;
+}
+
+#menu ul {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+#menu li {
+    display: inline;
+    list-style: none; /* pour enlever les puces sur IE7 */
+}
+
+.album-list {
+  width: 100%;
+  padding: 2em 0;
+  margin: auto;
+  background: white;
+  float:left;
+}
+
+.thumbnail {
+  text-align: center;
+  float:left;
+}
+.thumbnail img {
+  max-width: 85%;
+  height: auto;
+  margin: 0 2px 5px 2px;
+  border: 10px solid #fff;
+  border-radius: 2px 2px 2px 2px;
+  box-shadow: 0 0 3px #B1B1B1;
+  padding: 0 0 2px;
+}
+.thumbnail img:hover {
+  box-shadow: 0 0 5px #818181;
+}
+
+.album_title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.video {
+  width: 100%;
+  margin: 0 0 24px 0;
+}
+.video__container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+}
+.video__container iframe,
+.video__container video {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2% 0 15% 0;
+}
+.video-desc {
+  width: 100%;
+  max-width: 740px;
+  margin: 12px auto;
+}
+
+.additionnal-infos {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+.gallery {
+  width: 100%;
+  height: auto;
+  float: left;
+  padding-top:1em;
+}
+.gallery a {
+  line-height: 0;
+}
+
+.gallery__img--main a{
+  width: auto;
+  height: auto;
+}
+
+.menu-img,
+.gallery__img--secondary {
+  width: 25%;
+  float:left;
+  margin-bottom: 1em;
+}
+
+.gallery__title {
+  line-height: 14px;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 5px;
+  width: 100%;
+  float: left;
+}
+
+footer {
+  width:100%;
+  float:left;
+}
+
+footer p {
+  text-align: center;
+}
+footer span:not(:last-child):after {
+  content: ' - ';
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 40px;
+  }
+  .menu-img,
+  .gallery__img--secondary {
+    width: 33%;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .menu-img,
+  .gallery__img--secondary {
+    width: 50%;
+  }
+}
+
+
+@media screen and (max-width: 300px) {
+  .menu-img,
+  .gallery__img--secondary {
+    width: 100%;
+  }
+}
+
+.pswp__dynamic-caption {
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transition: opacity 120ms linear !important; /* override default */
+}
+
+.pswp-caption-content {
+  display: none;
+}
+
+.pswp__dynamic-caption a {
+  color: #fff;
+}
+
+.pswp__dynamic-caption--faded {
+  opacity: 0 !important;
+}
+
+.pswp__dynamic-caption--aside {
+  width: auto;
+  max-width: 300px;
+  padding: 20px 15px 20px 20px;
+  margin-top: 70px;
+}
+
+.pswp__dynamic-caption--below {
+  width: auto;
+  max-width: 700px;
+  padding: 15px 0 0;
+}
+
+.pswp__dynamic-caption--on-hor-edge {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.pswp__dynamic-caption--mobile {
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 15px;
+
+  right: 0;
+  bottom: 0;
+
+  /* override styles that were set via JS.
+    as they interfere with size measurement */
+  top: auto !important;
+  left: 0 !important;
+}
