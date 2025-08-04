@@ -1,35 +1,40 @@
 {
-  "20240610-DSC04335.jpg": {
-    "description": "猎德大桥上的猫咪"
-  },
-  "20240610-DSC03792.jpg": {
-    "description": "珠江公园——狭路相逢..."
-  },
-  "20240610-DSC03797.jpg": {
-    "description": "珠江公园投喂点"
-  },
-  "20211209-P1000522.jpg": {
-    "description": "流花湖公园——冬日的猫咪"
-  },
-  "20211209-P1000521.jpg": {
-    "description": "流花湖公园——冬日的猫咪"
-  },
-  "20241201-DSC03042.jpg": {
-    "description": "纯阳观——左边猫：别看了，坏猫不是我。"
-  },
-  "20241201-DSC03086.jpg": {
-    "description": "沧桑的眼神。"
-  },
-  "20241201-DSC03087.jpg": {
-    "description": "你有什么故事吗？"
-  },
-  "20241201-DSC03068.jpg": {
-    "description": "咪该？咩？什么？"
-  },
-  "20241130-DSC02615.jpg": {
-    "description": "我是小老虎！"
-  },
-  "20240721-DSC06098.jpg": {
-    "description": "吃我一喵拳！"
+  "title": "猫咪",
+  "description": "一只猫来到我的身边，用温柔的摩擦声安慰我，让我感到不再孤单。",
+  "custom_thumbnail": "20241130-DSC02615.jpg",
+  "images": {
+    "20240610-DSC04335.jpg": {
+      "description": "猎德大桥上的猫咪"
+    },
+    "20240610-DSC03792.jpg": {
+      "description": "珠江公园——狭路相逢..."
+    },
+    "20240610-DSC03797.jpg": {
+      "description": "珠江公园投喂点"
+    },
+    "20211209-P1000522.jpg": {
+      "description": "流花湖公园——冬日的猫咪"
+    },
+    "20211209-P1000521.jpg": {
+      "description": "流花湖公园——冬日的猫咪"
+    },
+    "20241201-DSC03042.jpg": {
+      "description": "纯阳观——左边猫：别看了，坏猫不是我。"
+    },
+    "20241201-DSC03086.jpg": {
+      "description": "沧桑的眼神。"
+    },
+    "20241201-DSC03087.jpg": {
+      "description": "你有什么故事吗？"
+    },
+    "20241201-DSC03068.jpg": {
+      "description": "咪该？咩？什么？"
+    },
+    "20241130-DSC02615.jpg": {
+      "description": "我是小老虎！"
+    },
+    "20240721-DSC06098.jpg": {
+      "description": "吃我一喵拳！"
+    }
   }
 }
