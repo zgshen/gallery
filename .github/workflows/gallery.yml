@@ -3,7 +3,7 @@ name: Build and Deploy Sigal Gallery
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
