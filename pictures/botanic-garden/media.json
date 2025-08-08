@@ -1,0 +1,31 @@
+{
+  "title": "植物园",
+  "description": "广州华南植物园。",
+  "custom_thumbnail": "20250806-DSC09915.jpg",
+  "images": {
+     "20250806-DSC09876.jpg": {
+         "description": ""
+     },
+     "20250806-DSC09886.jpg": {
+         "description": ""
+     },
+     "20250806-DSC09915.jpg": {
+         "description": ""
+     },
+     "20250806-DSC09918.jpg": {
+         "description": ""
+     },
+     "20250806-DSC09936.jpg": {
+         "description": ""
+     },
+     "20250806-DSC09954.jpg": {
+         "description": ""
+     },
+     "20250806-DSC09974.jpg": {
+         "description": ""
+     },
+     "20250806-DSC09999.jpg": {
+         "description": ""
+     }
+   }
+}
