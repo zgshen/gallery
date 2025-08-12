@@ -13,6 +13,10 @@ body {
     box-sizing: border-box;
 }
 
+h1 a {
+  font-style: normal !important;
+}
+
 .container-sub {
     width: 100%;
     max-width: 45vw; /* Adjust based on desired layout, reduced to 90% */
@@ -98,10 +102,6 @@ body {
     color: #333;
     font-size: 18px;
     margin-bottom: 4px;
-}
-
-.photo-info .detail {
-    
 }
 
 .photo-info .model-lens {
