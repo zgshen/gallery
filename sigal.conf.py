@@ -152,9 +152,11 @@ thumb_size = (280, 210)
 # Attribute of Album objects which is used to sort medias (eg 'title'). To
 # sort on a metadata key, use 'meta.key'.
 # albums_sort_attr = 'name'
+albums_sort_attr = 'datetime'
 
 # Reverse sort for albums
 # albums_sort_reverse = False
+albums_sort_reverse = True
 
 # Attribute of Media objects which is used to sort medias. 'date' can be used
 # to sort with EXIF dates, and 'meta.key' to sort on a metadata key (which then
@@ -162,7 +164,7 @@ thumb_size = (280, 210)
 # medias_sort_attr = 'filename'
 
 # Reverse sort for medias
-# medias_sort_reverse = False
+medias_sort_reverse = True
 
 # Filter directories and files.
 # The settings take a list of patterns matched with the fnmatch module on the
