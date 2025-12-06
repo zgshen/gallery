@@ -27,8 +27,8 @@ jobs:
         run: |
           sigal build
 
-      - name: Add CNAME file
-        run: echo "gallery.zguishen.com" > _build/CNAME
+      #- name: Add CNAME file
+      #  run: echo "gallery.zguishen.com" > _build/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
