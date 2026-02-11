@@ -1,79 +1,74 @@
 @echo off
+chcp 65001 >nul 2>&1
 setlocal enabledelayedexpansion
 
 :: 输出文件
 set "outfile=media.json"
 
-:: 写入 JSON 头部（先写到文件，但 custom_thumbnail 暂留空）
-(
-  echo {
-  echo   "title": "",
-  echo   "description": "",
-  echo   "custom_thumbnail": "",
-  echo   "datetime": "",
-  echo   "images": {
-) > "%outfile%"
+:: 清理旧文件
+if exist "%outfile%" del "%outfile%"
 
-:: 收集图片文件到变量（不区分大小写）
+:: 直接收集文件到数组中，避免临时文件
+set /a filecount=0
 set "files="
-for %%F in (*.jpg *.jpeg *.png *.gif *.bmp *.JPG *.JPEG *.PNG *.GIF *.BMP) do (
-    if exist "%%F" (
-        if defined files (
-            set "files=!files!;%%F"
-        ) else (
-            set "files=%%F"
-        )
+
+:: 收集所有图片文件（不区分大小写，避免重复）
+for %%F in (*.jpg *.jpeg *.png *.gif *.bmp) do (
+    set /a filecount+=1
+    set "file[!filecount!]=%%F"
+    if "!files!"=="" (
+        set "files=%%F"
+    ) else (
+        set "files=!files! %%F"
     )
 )
 
-:: 如果没找到文件，直接结束
-if not defined files (
-    >>"%outfile%" echo   }
-    >>"%outfile%" echo }
-    echo 没有找到图片文件。
+:: 检查是否有文件
+if %filecount%==0 (
+    echo {> "%outfile%"
+    echo   "title": "",>> "%outfile%"
+    echo   "description": "",>> "%outfile%"
+    echo   "custom_thumbnail": "",>> "%outfile%"
+	echo   "datetime": "",>> "%outfile%"
+	echo   "reverse": false,>> "%outfile%"
+    echo   "images": {}>> "%outfile%"
+    echo }>> "%outfile%"
+    echo 没有找到图片文件
     pause
     exit /b
 )
 
-:: 计算总数
-set "count=0"
-for %%A in (!files!) do set /a count+=1
+:: 使用第一个文件作为缩略图
+set "thumb=!file[1]!"
 
-:: 取第一个文件作为 custom_thumbnail
-for %%A in (!files!) do (
-    set "thumb=%%A"
-    goto :gotThumb
-)
-:gotThumb
+:: 写入JSON开始部分
+echo {> "%outfile%"
+echo   "title": "",>> "%outfile%"
+echo   "description": "",>> "%outfile%"
+echo   "custom_thumbnail": "!thumb!",>> "%outfile%"
+echo   "datetime": "",>> "%outfile%"
+echo   "reverse": false,>> "%outfile%"
+echo   "images": {>> "%outfile%"
 
-:: 先将头部文件重写，加入 custom_thumbnail
-(
-  echo {
-  echo   "title": "",
-  echo   "description": "",
-  echo   "custom_thumbnail": "!thumb!",
-  echo   "datetime": "",
-  echo   "images": {
-) > "%outfile%"
-
-:: 写入图片条目
-set "i=0"
-for %%A in (!files!) do (
-    set /a i+=1
-    if !i! lss %count% (
-        >>"%outfile%" echo     "%%A": {
-        >>"%outfile%" echo         "description": ""
-        >>"%outfile%" echo     },
+:: 写入所有文件
+for /l %%i in (1,1,%filecount%) do (
+    if %%i==%filecount% (
+        :: 最后一个文件，不加逗号
+        echo     "!file[%%i]!": {>> "%outfile%"
+        echo         "description": "">> "%outfile%"
+        echo     }>> "%outfile%"
     ) else (
-        >>"%outfile%" echo     "%%A": {
-        >>"%outfile%" echo         "description": ""
-        >>"%outfile%" echo     }
+        :: 不是最后一个文件，加逗号
+        echo     "!file[%%i]!": {>> "%outfile%"
+        echo         "description": "">> "%outfile%"
+        echo     },>> "%outfile%"
     )
 )
 
-:: JSON 结尾
->>"%outfile%" echo   }
->>"%outfile%" echo }
+:: JSON结束
+echo   }>> "%outfile%"
+echo }>> "%outfile%"
 
 echo 生成完成: %outfile%
+echo 共处理 %filecount% 个文件
 pause
