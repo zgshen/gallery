@@ -136,6 +136,10 @@ figcaption {
 .breadcrumb {
   margin-left: 1em;
 }
+#description {
+  margin-left: 1.3em;
+  font-size: 14px;
+}
 
 .album_title {
   display: block;
