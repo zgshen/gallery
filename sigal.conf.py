@@ -22,7 +22,8 @@ source = "pictures"
 # Theme :
 # - colorbox (default), galleria, photoswipe, moments, or the path to a custom theme
 # directory
-theme = "moments"
+#theme = "moments"
+theme = "photoswipe"
 
 # Theme for galleria (https://galleriajs.github.io/themes/)
 # galleria_theme = 'classic'
@@ -121,6 +122,7 @@ thumb_size = (280, 210)
 
 # Crop the image to fill the box
 # thumb_fit = True
+thumb_fit = False
 
 # When using thumb_fit, specifies what we should crop
 # for usage see
