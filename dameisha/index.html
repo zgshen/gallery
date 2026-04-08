@@ -4,212 +4,177 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>大梅沙</title>
+    <title>大梅沙 - </title>
     <meta name="description" content="">
     <meta name="author" content="&lt;a href=&#34;https://zguishen.com/&#34; target=&#34;_blank&#34;&gt;zguishen&lt;/a&gt;">
     <meta name="viewport" content="width=device-width">
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="../static/moments.css">
-  <script type="text/javascript" src="../static/moments.js"></script>
-  
+  <link rel="stylesheet" href="../static/photoswipe.css">
+  <script type="module">
+  import PhotoSwipeLightbox from '../static/photoswipe-lightbox.esm.min.js';
+  import PhotoSwipe from '../static/photoswipe.esm.min.js';
+  import PhotoSwipeDynamicCaption from '../static/photoswipe-dynamic-caption-plugin.esm.min.js';
+  import PhotoSwipeFullscreen from '../static/photoswipe-fullscreen.esm.min.js';
+  import PhotoSwipeVideoPlugin from '../static/photoswipe-video-plugin.esm.min.js';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.gallery',
+    children: '.thumbnail',
+    pswpModule: PhotoSwipe
+  });
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {type: 'auto'});
+  const fullscreenPlugin = new PhotoSwipeFullscreen(lightbox);
+  const videoPlugin = new PhotoSwipeVideoPlugin(lightbox, {autoplay: true});
+
+  lightbox.on('uiRegister', function() {
+    lightbox.pswp.ui.registerElement({
+      name: 'download-button',
+      order: 8,
+      isButton: true,
+      tagName: 'a',
+      html: {
+        isCustomSVG: true,
+        inner: '<path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" id="pswp__icn-download"/>',
+        outlineID: 'pswp__icn-download'
+      },
+      onInit: (el, pswp) => {
+        el.setAttribute('download', '');
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener');
+        pswp.on('change', () => {
+          if (pswp.currSlide.data.element.children[0].dataset.big) {
+            el.href = pswp.currSlide.data.element.children[0].dataset.big;
+          } else {
+            el.href = pswp.currSlide.data.src;
+          }
+        });
+      }
+    });
+  });
+
+  lightbox.init();
+  </script>
     <link rel="stylesheet" href="../static/styles.css">
   </head>
   <body>
     <div class="container">
-      <h1><a href="../">大梅沙</a></h1>
+      <h1><a href="../">zguishen&#39;s gallery</a></h1>
 
 
       <div class="content">
-
-    <div class="container-sub">
-        <div class="main-photo-section">
-            <!-- Main photo display area -->
-            <div class="main-photo-wrapper">
-                <img id="mainImage" class="main-photo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=" alt="">
-            </div>
-
-            <!-- Photo information display area -->
-            <div class="photo-info">
-                <div class="left-info">
-                    <span id="cameraBrand" class="brand"></span>
-					          <span id="lensModel" class="detail"></span>
-                    <span id="photoDetails" class="detail"></span>
-                    <span id="cameraModel" style="display:none"></span>
-                </div>
-                <div class="right-info">
-                    <span id="remark"></span>
-				          	<span id="photoDate"></span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Thumbnail navigation bar -->
-        <div class="thumbnail-navigation">
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250915-DSC02869.jpg"
-              data-details="ISO 100 F8 39mm 1/500s"
-              data-date="2025-09-15 14:28:30"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="右边远处在倒水">
-            <img class="thumbnail-image" src="thumbnails/20250915-DSC02869.jpg" alt="20250915-DSC02869">
+  <div class="breadcrumb">
+    <h2>
+        <a href=".">大梅沙</a></h2>
+  </div>
+  <div class="gallery">
+        <figure class="gallery__img--main thumbnail">
+          <a href="20250915-DSC03005.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250915-DSC03005.jpg" alt="20250915-DSC03005.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250915-DSC02886.jpg"
-              data-details="ISO 100 F8 150mm 1/500s"
-              data-date="2025-09-15 14:43:12"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250915-DSC02886.jpg" alt="20250915-DSC02886">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 400 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>36mm </abbr><abbr title='exposure'>1/1250s</abbr></div><abbr title='date'>Mon Sep 15 15:30:23 2025</abbr>-->
+          </div>
+          <figcaption>20250915-DSC03005 - Mon Sep 15 15:30:23 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250915-DSC02992.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250915-DSC02992.jpg" alt="20250915-DSC02992.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250915-DSC02892.jpg"
-              data-details="ISO 100 F8 268mm 1/500s"
-              data-date="2025-09-15 14:44:03"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250915-DSC02892.jpg" alt="20250915-DSC02892">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 250 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>63mm </abbr><abbr title='exposure'>1/1250s</abbr></div><abbr title='date'>Mon Sep 15 15:29:14 2025</abbr>-->
+          </div>
+          <figcaption>20250915-DSC02992 - Mon Sep 15 15:29:14 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250915-DSC02972.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250915-DSC02972.jpg" alt="20250915-DSC02972.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250915-DSC02922.jpg"
-              data-details="ISO 100 F8 27mm 1/640s"
-              data-date="2025-09-15 15:01:24"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250915-DSC02922.jpg" alt="20250915-DSC02922">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 160 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>18mm </abbr><abbr title='exposure'>1/800s</abbr></div><abbr title='date'>Mon Sep 15 15:20:17 2025</abbr>-->
+          </div>
+          <figcaption>20250915-DSC02972 - Mon Sep 15 15:20:17 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250915-DSC02962.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250915-DSC02962.jpg" alt="20250915-DSC02962.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250915-DSC02933.jpg"
-              data-details="ISO 125 F8 114mm 1/640s"
-              data-date="2025-09-15 15:05:41"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250915-DSC02933.jpg" alt="20250915-DSC02933">
+          <div class="pswp-caption-content">
+            <br>大梅沙海滨公园<!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 125 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>18mm </abbr><abbr title='exposure'>1/800s</abbr></div><abbr title='date'>Mon Sep 15 15:17:25 2025</abbr>-->
+          </div>
+          <figcaption>20250915-DSC02962 - Mon Sep 15 15:17:25 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250915-DSC02933.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250915-DSC02933.jpg" alt="20250915-DSC02933.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250915-DSC02962.jpg"
-              data-details="ISO 125 F8 27mm 1/800s"
-              data-date="2025-09-15 15:17:25"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="大梅沙海滨公园">
-            <img class="thumbnail-image" src="thumbnails/20250915-DSC02962.jpg" alt="20250915-DSC02962">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 125 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>76mm </abbr><abbr title='exposure'>1/640s</abbr></div><abbr title='date'>Mon Sep 15 15:05:41 2025</abbr>-->
+          </div>
+          <figcaption>20250915-DSC02933 - Mon Sep 15 15:05:41 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250915-DSC02922.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250915-DSC02922.jpg" alt="20250915-DSC02922.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250915-DSC02972.jpg"
-              data-details="ISO 160 F8 27mm 1/800s"
-              data-date="2025-09-15 15:20:17"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250915-DSC02972.jpg" alt="20250915-DSC02972">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>18mm </abbr><abbr title='exposure'>1/640s</abbr></div><abbr title='date'>Mon Sep 15 15:01:24 2025</abbr>-->
+          </div>
+          <figcaption>20250915-DSC02922 - Mon Sep 15 15:01:24 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250915-DSC02892.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250915-DSC02892.jpg" alt="20250915-DSC02892.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250915-DSC02992.jpg"
-              data-details="ISO 250 F8 94mm 1/1250s"
-              data-date="2025-09-15 15:29:14"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250915-DSC02992.jpg" alt="20250915-DSC02992">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>179mm </abbr><abbr title='exposure'>1/500s</abbr></div><abbr title='date'>Mon Sep 15 14:44:03 2025</abbr>-->
+          </div>
+          <figcaption>20250915-DSC02892 - Mon Sep 15 14:44:03 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250915-DSC02886.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250915-DSC02886.jpg" alt="20250915-DSC02886.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250915-DSC03005.jpg"
-              data-details="ISO 400 F8 54mm 1/1250s"
-              data-date="2025-09-15 15:30:23"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250915-DSC03005.jpg" alt="20250915-DSC03005">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>100mm </abbr><abbr title='exposure'>1/500s</abbr></div><abbr title='date'>Mon Sep 15 14:43:12 2025</abbr>-->
+          </div>
+          <figcaption>20250915-DSC02886 - Mon Sep 15 14:43:12 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250915-DSC02869.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250915-DSC02869.jpg" alt="20250915-DSC02869.jpg" />
           </a>
-        </div>
-    </div>
-    
-    <!-- Fullscreen Modal -->
-    <div id="fullscreen-overlay" class="fullscreen-overlay">
-        <div class="fullscreen-controls">
-            <!-- Fullscreen button using SVG for better control -->
-            <button id="fullscreen-toggle" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-fullscreen">
-                    <path d="M4 8V4m0 0h4M4 4l5 5"></path>
-                    <path d="M20 16v4m0 0h-4M20 20l-5-5"></path>
-                    <path d="M4 16v4m0 0h4M4 20l5-5"></path>
-                    <path d="M20 8V4m0 0h-4M20 4l-5 5"></path>
-                </svg>
-            </button>
-            <!-- Zoom-in button using SVG (new hollow version) -->
-            <button id="zoom-in-button" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon icon-zoom-new">
-				  <circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-				  <line x1="14.5" y1="14.5" x2="20" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				  <line x1="8" y1="10" x2="12" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				  <line x1="10" y1="8" x2="10" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				</svg>
-            </button>
-            <!-- Close button -->
-            <button id="fullscreen-close" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon icon-close">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <img id="fullscreen-image" class="fullscreen-image" src="" alt="全屏照片">
-        <!-- Fullscreen navigation buttons -->
-        <button id="fullscreenPrev" class="fullscreen-nav-button">&#10094;</button>
-        <button id="fullscreenNext" class="fullscreen-nav-button">&#10095;</button>
-    </div>
-
-
+          <div class="pswp-caption-content">
+            <br>右边远处在倒水<!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>26mm </abbr><abbr title='exposure'>1/500s</abbr></div><abbr title='date'>Mon Sep 15 14:28:30 2025</abbr>-->
+          </div>
+          <figcaption>20250915-DSC02869 - Mon Sep 15 14:28:30 2025</figcaption>
+        </figure>
+  </div>
 
       </div>
 

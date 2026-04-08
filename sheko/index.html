@@ -4,296 +4,249 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>石澳</title>
+    <title>石澳 - </title>
     <meta name="description" content="">
     <meta name="author" content="&lt;a href=&#34;https://zguishen.com/&#34; target=&#34;_blank&#34;&gt;zguishen&lt;/a&gt;">
     <meta name="viewport" content="width=device-width">
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="../static/moments.css">
-  <script type="text/javascript" src="../static/moments.js"></script>
-  
+  <link rel="stylesheet" href="../static/photoswipe.css">
+  <script type="module">
+  import PhotoSwipeLightbox from '../static/photoswipe-lightbox.esm.min.js';
+  import PhotoSwipe from '../static/photoswipe.esm.min.js';
+  import PhotoSwipeDynamicCaption from '../static/photoswipe-dynamic-caption-plugin.esm.min.js';
+  import PhotoSwipeFullscreen from '../static/photoswipe-fullscreen.esm.min.js';
+  import PhotoSwipeVideoPlugin from '../static/photoswipe-video-plugin.esm.min.js';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.gallery',
+    children: '.thumbnail',
+    pswpModule: PhotoSwipe
+  });
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {type: 'auto'});
+  const fullscreenPlugin = new PhotoSwipeFullscreen(lightbox);
+  const videoPlugin = new PhotoSwipeVideoPlugin(lightbox, {autoplay: true});
+
+  lightbox.on('uiRegister', function() {
+    lightbox.pswp.ui.registerElement({
+      name: 'download-button',
+      order: 8,
+      isButton: true,
+      tagName: 'a',
+      html: {
+        isCustomSVG: true,
+        inner: '<path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" id="pswp__icn-download"/>',
+        outlineID: 'pswp__icn-download'
+      },
+      onInit: (el, pswp) => {
+        el.setAttribute('download', '');
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener');
+        pswp.on('change', () => {
+          if (pswp.currSlide.data.element.children[0].dataset.big) {
+            el.href = pswp.currSlide.data.element.children[0].dataset.big;
+          } else {
+            el.href = pswp.currSlide.data.src;
+          }
+        });
+      }
+    });
+  });
+
+  lightbox.init();
+  </script>
     <link rel="stylesheet" href="../static/styles.css">
   </head>
   <body>
     <div class="container">
-      <h1><a href="../">石澳</a></h1>
+      <h1><a href="../">zguishen&#39;s gallery</a></h1>
 
 
       <div class="content">
-
-    <div class="container-sub">
-        <div class="main-photo-section">
-            <!-- Main photo display area -->
-            <div class="main-photo-wrapper">
-                <img id="mainImage" class="main-photo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=" alt="">
-            </div>
-
-            <!-- Photo information display area -->
-            <div class="photo-info">
-                <div class="left-info">
-                    <span id="cameraBrand" class="brand"></span>
-					          <span id="lensModel" class="detail"></span>
-                    <span id="photoDetails" class="detail"></span>
-                    <span id="cameraModel" style="display:none"></span>
-                </div>
-                <div class="right-info">
-                    <span id="remark"></span>
-				          	<span id="photoDate"></span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Thumbnail navigation bar -->
-        <div class="thumbnail-navigation">
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-FullSizeRender-9.jpg"
-              data-details="ISO 250 F1.8 26mm 1/50s"
-              data-date="2024-10-10 10:54:42"
-              data-brand="Apple iPhone XR"
-              data-model=""
-              data-lens="iPhone XR back camera 4.25mm f/1.8"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-FullSizeRender-9.jpg" alt="20241010-FullSizeRender-9">
+  <div class="breadcrumb">
+    <h2>
+        <a href=".">石澳</a></h2>
+  </div>
+  <div class="gallery">
+        <figure class="gallery__img--main thumbnail">
+          <a href="20241010-IMG_6714.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1600">
+             <img src="thumbnails/20241010-IMG_6714.jpg" alt="20241010-IMG_6714.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-FullSizeRender-7.jpg"
-              data-details="ISO 100 F1.8 26mm 1/120s"
-              data-date="2024-10-10 14:21:07"
-              data-brand="Apple iPhone XR"
-              data-model=""
-              data-lens="iPhone XR back camera 4.25mm f/1.8"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-FullSizeRender-7.jpg" alt="20241010-FullSizeRender-7">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone XR</abbr>
+    <br><abbr title='camera make and model'>iPhone XR back camera 4.25mm f/1.8</abbr><div class='film-meta'><abbr title='film speed'>ISO 25 </abbr><abbr title='aperture'>F1.8 </abbr><abbr title='focal length'>4mm </abbr><abbr title='exposure'>1/1250s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=22.231183333333334&amp;mlon=114.25215277833334&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N22.231183E114.252153</a><abbr title='date'>Thu Oct 10 16:42:39 2024</abbr>-->
+          </div>
+          <figcaption>20241010-IMG_6714 - Thu Oct 10 16:42:39 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-FullSizeRender-2.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1600">
+             <img src="thumbnails/20241010-FullSizeRender-2.jpg" alt="20241010-FullSizeRender-2.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-DSC08984.jpg"
-              data-details="ISO 100 F22 27mm 1/60s"
-              data-date="2024-10-10 14:29:47"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-DSC08984.jpg" alt="20241010-DSC08984">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone XR</abbr>
+    <br><abbr title='camera make and model'>iPhone XR back camera 4.25mm f/1.8</abbr><div class='film-meta'><abbr title='film speed'>ISO 25 </abbr><abbr title='aperture'>F1.8 </abbr><abbr title='focal length'>4mm </abbr><abbr title='exposure'>1/230s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=22.230805555&amp;mlon=114.251069445&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N22.230806E114.251069</a><abbr title='date'>Thu Oct 10 17:00:47 2024</abbr>-->
+          </div>
+          <figcaption>20241010-FullSizeRender-2 - Thu Oct 10 17:00:47 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-FullSizeRender-7.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1600">
+             <img src="thumbnails/20241010-FullSizeRender-7.jpg" alt="20241010-FullSizeRender-7.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-DSC09003.jpg"
-              data-details="ISO 100 F8 27mm 1/400s"
-              data-date="2024-10-10 14:50:36"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-DSC09003.jpg" alt="20241010-DSC09003">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone XR</abbr>
+    <br><abbr title='camera make and model'>iPhone XR back camera 4.25mm f/1.8</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='aperture'>F1.8 </abbr><abbr title='focal length'>4mm </abbr><abbr title='exposure'>1/120s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=22.235644445&amp;mlon=114.24804722166667&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N22.235644E114.248047</a><abbr title='date'>Thu Oct 10 14:21:07 2024</abbr>-->
+          </div>
+          <figcaption>20241010-FullSizeRender-7 - Thu Oct 10 14:21:07 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-FullSizeRender-9.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1600">
+             <img src="thumbnails/20241010-FullSizeRender-9.jpg" alt="20241010-FullSizeRender-9.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-DSC09075.jpg"
-              data-details="ISO 100 F8 91mm 1/320s"
-              data-date="2024-10-10 15:12:56"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-DSC09075.jpg" alt="20241010-DSC09075">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone XR</abbr>
+    <br><abbr title='camera make and model'>iPhone XR back camera 4.25mm f/1.8</abbr><div class='film-meta'><abbr title='film speed'>ISO 250 </abbr><abbr title='aperture'>F1.8 </abbr><abbr title='focal length'>4mm </abbr><abbr title='exposure'>1/50s</abbr></div><abbr title='date'>Thu Oct 10 10:54:42 2024</abbr>-->
+          </div>
+          <figcaption>20241010-FullSizeRender-9 - Thu Oct 10 10:54:42 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-DSC09246.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20241010-DSC09246.jpg" alt="20241010-DSC09246.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-DSC09104.jpg"
-              data-details="ISO 100 F8 37mm 1/320s"
-              data-date="2024-10-10 15:30:24"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-DSC09104.jpg" alt="20241010-DSC09104">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 200 </abbr><abbr title='aperture'>F3.5 </abbr><abbr title='focal length'>18mm </abbr><abbr title='exposure'>1/30s</abbr></div><abbr title='date'>Thu Oct 10 18:53:08 2024</abbr>-->
+          </div>
+          <figcaption>20241010-DSC09246 - Thu Oct 10 18:53:08 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-DSC09177.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20241010-DSC09177.jpg" alt="20241010-DSC09177.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-DSC09123.jpg"
-              data-details="ISO 100 F8 27mm 1/125s"
-              data-date="2024-10-10 15:38:31"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-DSC09123.jpg" alt="20241010-DSC09123">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 250 </abbr><abbr title='aperture'>F6.3 </abbr><abbr title='focal length'>300mm </abbr><abbr title='exposure'>1/640s</abbr></div><abbr title='date'>Thu Oct 10 16:06:59 2024</abbr>-->
+          </div>
+          <figcaption>20241010-DSC09177 - Thu Oct 10 16:06:59 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-DSC09174.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20241010-DSC09174.jpg" alt="20241010-DSC09174.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-DSC09145.jpg"
-              data-details="ISO 100 F8 27mm 1/125s"
-              data-date="2024-10-10 15:47:37"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-DSC09145.jpg" alt="20241010-DSC09145">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 1250 </abbr><abbr title='aperture'>F6.3 </abbr><abbr title='focal length'>300mm </abbr><abbr title='exposure'>1/640s</abbr></div><abbr title='date'>Thu Oct 10 16:06:26 2024</abbr>-->
+          </div>
+          <figcaption>20241010-DSC09174 - Thu Oct 10 16:06:26 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-DSC09159.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20241010-DSC09159.jpg" alt="20241010-DSC09159.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-DSC09147.jpg"
-              data-details="ISO 100 F8 27mm 1/30s"
-              data-date="2024-10-10 15:50:31"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-DSC09147.jpg" alt="20241010-DSC09147">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>18mm </abbr><abbr title='exposure'>1/125s</abbr></div><abbr title='date'>Thu Oct 10 16:02:05 2024</abbr>-->
+          </div>
+          <figcaption>20241010-DSC09159 - Thu Oct 10 16:02:05 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-DSC09147.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20241010-DSC09147.jpg" alt="20241010-DSC09147.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-DSC09159.jpg"
-              data-details="ISO 100 F8 27mm 1/125s"
-              data-date="2024-10-10 16:02:05"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-DSC09159.jpg" alt="20241010-DSC09159">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>18mm </abbr><abbr title='exposure'>1/30s</abbr></div><abbr title='date'>Thu Oct 10 15:50:31 2024</abbr>-->
+          </div>
+          <figcaption>20241010-DSC09147 - Thu Oct 10 15:50:31 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-DSC09145.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20241010-DSC09145.jpg" alt="20241010-DSC09145.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-DSC09174.jpg"
-              data-details="ISO 1250 F6.3 450mm 1/640s"
-              data-date="2024-10-10 16:06:26"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-DSC09174.jpg" alt="20241010-DSC09174">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>18mm </abbr><abbr title='exposure'>1/125s</abbr></div><abbr title='date'>Thu Oct 10 15:47:37 2024</abbr>-->
+          </div>
+          <figcaption>20241010-DSC09145 - Thu Oct 10 15:47:37 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-DSC09123.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20241010-DSC09123.jpg" alt="20241010-DSC09123.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-DSC09177.jpg"
-              data-details="ISO 250 F6.3 450mm 1/640s"
-              data-date="2024-10-10 16:06:59"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-DSC09177.jpg" alt="20241010-DSC09177">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>18mm </abbr><abbr title='exposure'>1/125s</abbr></div><abbr title='date'>Thu Oct 10 15:38:31 2024</abbr>-->
+          </div>
+          <figcaption>20241010-DSC09123 - Thu Oct 10 15:38:31 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-DSC09104.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20241010-DSC09104.jpg" alt="20241010-DSC09104.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-IMG_6714.jpg"
-              data-details="ISO 25 F1.8 26mm 1/1250s"
-              data-date="2024-10-10 16:42:39"
-              data-brand="Apple iPhone XR"
-              data-model=""
-              data-lens="iPhone XR back camera 4.25mm f/1.8"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-IMG_6714.jpg" alt="20241010-IMG_6714">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>25mm </abbr><abbr title='exposure'>1/320s</abbr></div><abbr title='date'>Thu Oct 10 15:30:24 2024</abbr>-->
+          </div>
+          <figcaption>20241010-DSC09104 - Thu Oct 10 15:30:24 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-DSC09075.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20241010-DSC09075.jpg" alt="20241010-DSC09075.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-FullSizeRender-2.jpg"
-              data-details="ISO 25 F1.8 26mm 1/230s"
-              data-date="2024-10-10 17:00:47"
-              data-brand="Apple iPhone XR"
-              data-model=""
-              data-lens="iPhone XR back camera 4.25mm f/1.8"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-FullSizeRender-2.jpg" alt="20241010-FullSizeRender-2">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>61mm </abbr><abbr title='exposure'>1/320s</abbr></div><abbr title='date'>Thu Oct 10 15:12:56 2024</abbr>-->
+          </div>
+          <figcaption>20241010-DSC09075 - Thu Oct 10 15:12:56 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-DSC09003.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20241010-DSC09003.jpg" alt="20241010-DSC09003.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20241010-DSC09246.jpg"
-              data-details="ISO 200 F3.5 27mm 1/30s"
-              data-date="2024-10-10 18:53:08"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E 18-300mm F3.5-6.3 B061"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20241010-DSC09246.jpg" alt="20241010-DSC09246">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>18mm </abbr><abbr title='exposure'>1/400s</abbr></div><abbr title='date'>Thu Oct 10 14:50:36 2024</abbr>-->
+          </div>
+          <figcaption>20241010-DSC09003 - Thu Oct 10 14:50:36 2024</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20241010-DSC08984.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20241010-DSC08984.jpg" alt="20241010-DSC08984.jpg" />
           </a>
-        </div>
-    </div>
-    
-    <!-- Fullscreen Modal -->
-    <div id="fullscreen-overlay" class="fullscreen-overlay">
-        <div class="fullscreen-controls">
-            <!-- Fullscreen button using SVG for better control -->
-            <button id="fullscreen-toggle" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-fullscreen">
-                    <path d="M4 8V4m0 0h4M4 4l5 5"></path>
-                    <path d="M20 16v4m0 0h-4M20 20l-5-5"></path>
-                    <path d="M4 16v4m0 0h4M4 20l5-5"></path>
-                    <path d="M20 8V4m0 0h-4M20 4l-5 5"></path>
-                </svg>
-            </button>
-            <!-- Zoom-in button using SVG (new hollow version) -->
-            <button id="zoom-in-button" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon icon-zoom-new">
-				  <circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-				  <line x1="14.5" y1="14.5" x2="20" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				  <line x1="8" y1="10" x2="12" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				  <line x1="10" y1="8" x2="10" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				</svg>
-            </button>
-            <!-- Close button -->
-            <button id="fullscreen-close" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon icon-close">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <img id="fullscreen-image" class="fullscreen-image" src="" alt="全屏照片">
-        <!-- Fullscreen navigation buttons -->
-        <button id="fullscreenPrev" class="fullscreen-nav-button">&#10094;</button>
-        <button id="fullscreenNext" class="fullscreen-nav-button">&#10095;</button>
-    </div>
-
-
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E 18-300mm F3.5-6.3 B061</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='aperture'>F22.0 </abbr><abbr title='focal length'>18mm </abbr><abbr title='exposure'>1/60s</abbr></div><abbr title='date'>Thu Oct 10 14:29:47 2024</abbr>-->
+          </div>
+          <figcaption>20241010-DSC08984 - Thu Oct 10 14:29:47 2024</figcaption>
+        </figure>
+  </div>
 
       </div>
 

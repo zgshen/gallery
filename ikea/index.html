@@ -4,450 +4,381 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>宜家</title>
+    <title>宜家 - </title>
     <meta name="description" content="">
     <meta name="author" content="&lt;a href=&#34;https://zguishen.com/&#34; target=&#34;_blank&#34;&gt;zguishen&lt;/a&gt;">
     <meta name="viewport" content="width=device-width">
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="../static/moments.css">
-  <script type="text/javascript" src="../static/moments.js"></script>
-  
+  <link rel="stylesheet" href="../static/photoswipe.css">
+  <script type="module">
+  import PhotoSwipeLightbox from '../static/photoswipe-lightbox.esm.min.js';
+  import PhotoSwipe from '../static/photoswipe.esm.min.js';
+  import PhotoSwipeDynamicCaption from '../static/photoswipe-dynamic-caption-plugin.esm.min.js';
+  import PhotoSwipeFullscreen from '../static/photoswipe-fullscreen.esm.min.js';
+  import PhotoSwipeVideoPlugin from '../static/photoswipe-video-plugin.esm.min.js';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.gallery',
+    children: '.thumbnail',
+    pswpModule: PhotoSwipe
+  });
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {type: 'auto'});
+  const fullscreenPlugin = new PhotoSwipeFullscreen(lightbox);
+  const videoPlugin = new PhotoSwipeVideoPlugin(lightbox, {autoplay: true});
+
+  lightbox.on('uiRegister', function() {
+    lightbox.pswp.ui.registerElement({
+      name: 'download-button',
+      order: 8,
+      isButton: true,
+      tagName: 'a',
+      html: {
+        isCustomSVG: true,
+        inner: '<path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" id="pswp__icn-download"/>',
+        outlineID: 'pswp__icn-download'
+      },
+      onInit: (el, pswp) => {
+        el.setAttribute('download', '');
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener');
+        pswp.on('change', () => {
+          if (pswp.currSlide.data.element.children[0].dataset.big) {
+            el.href = pswp.currSlide.data.element.children[0].dataset.big;
+          } else {
+            el.href = pswp.currSlide.data.src;
+          }
+        });
+      }
+    });
+  });
+
+  lightbox.init();
+  </script>
     <link rel="stylesheet" href="../static/styles.css">
   </head>
   <body>
     <div class="container">
-      <h1><a href="../">宜家</a></h1>
+      <h1><a href="../">zguishen&#39;s gallery</a></h1>
 
 
       <div class="content">
-
-    <div class="container-sub">
-        <div class="main-photo-section">
-            <!-- Main photo display area -->
-            <div class="main-photo-wrapper">
-                <img id="mainImage" class="main-photo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=" alt="">
-            </div>
-
-            <!-- Photo information display area -->
-            <div class="photo-info">
-                <div class="left-info">
-                    <span id="cameraBrand" class="brand"></span>
-					          <span id="lensModel" class="detail"></span>
-                    <span id="photoDetails" class="detail"></span>
-                    <span id="cameraModel" style="display:none"></span>
-                </div>
-                <div class="right-info">
-                    <span id="remark"></span>
-				          	<span id="photoDate"></span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Thumbnail navigation bar -->
-        <div class="thumbnail-navigation">
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01202.jpg"
-              data-details="ISO 100 1/160s"
-              data-date="2025-08-15 14:35:50"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01202.jpg" alt="20250815-DSC01202">
+  <div class="breadcrumb">
+    <h2>
+        <a href=".">宜家</a></h2>
+  </div>
+  <div class="gallery">
+        <figure class="gallery__img--main thumbnail">
+          <a href="20250815-DSC01454.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01454.jpg" alt="20250815-DSC01454.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01204.jpg"
-              data-details="ISO 200 1/160s"
-              data-date="2025-08-15 14:37:30"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01204.jpg" alt="20250815-DSC01204">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 160 </abbr><abbr title='exposure'>1/50s</abbr></div><abbr title='date'>Fri Aug 15 16:54:37 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01454 - Fri Aug 15 16:54:37 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01439.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01439.jpg" alt="20250815-DSC01439.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01209.jpg"
-              data-details="ISO 500 1/160s"
-              data-date="2025-08-15 14:41:16"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="给父母买一条鲨鲨，了了他们的抱孙之痒...">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01209.jpg" alt="20250815-DSC01209">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 500 </abbr><abbr title='exposure'>1/250s</abbr></div><abbr title='date'>Fri Aug 15 16:42:30 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01439 - Fri Aug 15 16:42:30 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01422.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01422.jpg" alt="20250815-DSC01422.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01238.jpg"
-              data-details="ISO 125 1/160s"
-              data-date="2025-08-15 15:00:42"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01238.jpg" alt="20250815-DSC01238">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='exposure'>1/125s</abbr></div><abbr title='date'>Fri Aug 15 16:36:10 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01422 - Fri Aug 15 16:36:10 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01406.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01406.jpg" alt="20250815-DSC01406.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01239.jpg"
-              data-details="ISO 160 1/160s"
-              data-date="2025-08-15 15:01:03"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01239.jpg" alt="20250815-DSC01239">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='exposure'>1/125s</abbr></div><abbr title='date'>Fri Aug 15 16:30:12 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01406 - Fri Aug 15 16:30:12 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01398.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01398.jpg" alt="20250815-DSC01398.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01264.jpg"
-              data-details="ISO 400 1/400s"
-              data-date="2025-08-15 15:17:48"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01264.jpg" alt="20250815-DSC01264">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='exposure'>1/125s</abbr></div><abbr title='date'>Fri Aug 15 16:27:14 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01398 - Fri Aug 15 16:27:14 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01388.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250815-DSC01388.jpg" alt="20250815-DSC01388.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01266.jpg"
-              data-details="ISO 200 1/400s"
-              data-date="2025-08-15 15:18:37"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01266.jpg" alt="20250815-DSC01266">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 500 </abbr><abbr title='exposure'>1/100s</abbr></div><abbr title='date'>Fri Aug 15 16:21:36 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01388 - Fri Aug 15 16:21:36 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01377.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01377.jpg" alt="20250815-DSC01377.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01277.jpg"
-              data-details="ISO 500 1/400s"
-              data-date="2025-08-15 15:25:56"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01277.jpg" alt="20250815-DSC01277">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='exposure'>1/100s</abbr></div><abbr title='date'>Fri Aug 15 16:18:27 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01377 - Fri Aug 15 16:18:27 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01372.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01372.jpg" alt="20250815-DSC01372.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01279.jpg"
-              data-details="ISO 1000 1/400s"
-              data-date="2025-08-15 15:26:36"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01279.jpg" alt="20250815-DSC01279">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 320 </abbr><abbr title='exposure'>1/100s</abbr></div><abbr title='date'>Fri Aug 15 16:16:51 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01372 - Fri Aug 15 16:16:51 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01369.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01369.jpg" alt="20250815-DSC01369.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01291.jpg"
-              data-details="ISO 100 1/50s"
-              data-date="2025-08-15 15:33:03"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01291.jpg" alt="20250815-DSC01291">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='exposure'>1/100s</abbr></div><abbr title='date'>Fri Aug 15 16:16:16 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01369 - Fri Aug 15 16:16:16 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01349.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01349.jpg" alt="20250815-DSC01349.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01294.jpg"
-              data-details="ISO 100 1/80s"
-              data-date="2025-08-15 15:35:48"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01294.jpg" alt="20250815-DSC01294">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='exposure'>1/160s</abbr></div><abbr title='date'>Fri Aug 15 16:02:45 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01349 - Fri Aug 15 16:02:45 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01347.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01347.jpg" alt="20250815-DSC01347.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01301.jpg"
-              data-details="ISO 200 1/80s"
-              data-date="2025-08-15 15:39:50"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01301.jpg" alt="20250815-DSC01301">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 320 </abbr><abbr title='exposure'>1/160s</abbr></div><abbr title='date'>Fri Aug 15 16:01:37 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01347 - Fri Aug 15 16:01:37 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01344.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01344.jpg" alt="20250815-DSC01344.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01307.jpg"
-              data-details="ISO 250 1/80s"
-              data-date="2025-08-15 15:41:37"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01307.jpg" alt="20250815-DSC01307">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 250 </abbr><abbr title='exposure'>1/200s</abbr></div><abbr title='date'>Fri Aug 15 15:57:46 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01344 - Fri Aug 15 15:57:46 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01323.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01323.jpg" alt="20250815-DSC01323.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01323.jpg"
-              data-details="ISO 125 1/80s"
-              data-date="2025-08-15 15:47:30"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01323.jpg" alt="20250815-DSC01323">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 125 </abbr><abbr title='exposure'>1/80s</abbr></div><abbr title='date'>Fri Aug 15 15:47:30 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01323 - Fri Aug 15 15:47:30 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01307.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01307.jpg" alt="20250815-DSC01307.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01344.jpg"
-              data-details="ISO 250 1/200s"
-              data-date="2025-08-15 15:57:46"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01344.jpg" alt="20250815-DSC01344">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 250 </abbr><abbr title='exposure'>1/80s</abbr></div><abbr title='date'>Fri Aug 15 15:41:37 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01307 - Fri Aug 15 15:41:37 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01301.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01301.jpg" alt="20250815-DSC01301.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01347.jpg"
-              data-details="ISO 320 1/160s"
-              data-date="2025-08-15 16:01:37"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01347.jpg" alt="20250815-DSC01347">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 200 </abbr><abbr title='exposure'>1/80s</abbr></div><abbr title='date'>Fri Aug 15 15:39:50 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01301 - Fri Aug 15 15:39:50 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01294.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01294.jpg" alt="20250815-DSC01294.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01349.jpg"
-              data-details="ISO 100 1/160s"
-              data-date="2025-08-15 16:02:45"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01349.jpg" alt="20250815-DSC01349">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='exposure'>1/80s</abbr></div><abbr title='date'>Fri Aug 15 15:35:48 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01294 - Fri Aug 15 15:35:48 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01291.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01291.jpg" alt="20250815-DSC01291.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01369.jpg"
-              data-details="ISO 100 1/100s"
-              data-date="2025-08-15 16:16:16"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01369.jpg" alt="20250815-DSC01369">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='exposure'>1/50s</abbr></div><abbr title='date'>Fri Aug 15 15:33:03 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01291 - Fri Aug 15 15:33:03 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01279.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01279.jpg" alt="20250815-DSC01279.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01372.jpg"
-              data-details="ISO 320 1/100s"
-              data-date="2025-08-15 16:16:51"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01372.jpg" alt="20250815-DSC01372">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 1000 </abbr><abbr title='exposure'>1/400s</abbr></div><abbr title='date'>Fri Aug 15 15:26:36 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01279 - Fri Aug 15 15:26:36 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01277.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01277.jpg" alt="20250815-DSC01277.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01377.jpg"
-              data-details="ISO 100 1/100s"
-              data-date="2025-08-15 16:18:27"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01377.jpg" alt="20250815-DSC01377">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 500 </abbr><abbr title='exposure'>1/400s</abbr></div><abbr title='date'>Fri Aug 15 15:25:56 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01277 - Fri Aug 15 15:25:56 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01266.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01266.jpg" alt="20250815-DSC01266.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01388.jpg"
-              data-details="ISO 500 1/100s"
-              data-date="2025-08-15 16:21:36"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01388.jpg" alt="20250815-DSC01388">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 200 </abbr><abbr title='exposure'>1/400s</abbr></div><abbr title='date'>Fri Aug 15 15:18:37 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01266 - Fri Aug 15 15:18:37 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01264.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250815-DSC01264.jpg" alt="20250815-DSC01264.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01398.jpg"
-              data-details="ISO 100 1/125s"
-              data-date="2025-08-15 16:27:14"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01398.jpg" alt="20250815-DSC01398">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 400 </abbr><abbr title='exposure'>1/400s</abbr></div><abbr title='date'>Fri Aug 15 15:17:48 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01264 - Fri Aug 15 15:17:48 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01239.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01239.jpg" alt="20250815-DSC01239.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01406.jpg"
-              data-details="ISO 100 1/125s"
-              data-date="2025-08-15 16:30:12"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01406.jpg" alt="20250815-DSC01406">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 160 </abbr><abbr title='exposure'>1/160s</abbr></div><abbr title='date'>Fri Aug 15 15:01:03 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01239 - Fri Aug 15 15:01:03 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01238.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01238.jpg" alt="20250815-DSC01238.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01422.jpg"
-              data-details="ISO 100 1/125s"
-              data-date="2025-08-15 16:36:10"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01422.jpg" alt="20250815-DSC01422">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 125 </abbr><abbr title='exposure'>1/160s</abbr></div><abbr title='date'>Fri Aug 15 15:00:42 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01238 - Fri Aug 15 15:00:42 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01209.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01209.jpg" alt="20250815-DSC01209.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01439.jpg"
-              data-details="ISO 500 1/250s"
-              data-date="2025-08-15 16:42:30"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01439.jpg" alt="20250815-DSC01439">
+          <div class="pswp-caption-content">
+            <br>给父母买一条鲨鲨，了了他们的抱孙之痒...<!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 500 </abbr><abbr title='exposure'>1/160s</abbr></div><abbr title='date'>Fri Aug 15 14:41:16 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01209 - Fri Aug 15 14:41:16 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01204.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01204.jpg" alt="20250815-DSC01204.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250815-DSC01454.jpg"
-              data-details="ISO 160 1/50s"
-              data-date="2025-08-15 16:54:37"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="----"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250815-DSC01454.jpg" alt="20250815-DSC01454">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 200 </abbr><abbr title='exposure'>1/160s</abbr></div><abbr title='date'>Fri Aug 15 14:37:30 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01204 - Fri Aug 15 14:37:30 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250815-DSC01202.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250815-DSC01202.jpg" alt="20250815-DSC01202.jpg" />
           </a>
-        </div>
-    </div>
-    
-    <!-- Fullscreen Modal -->
-    <div id="fullscreen-overlay" class="fullscreen-overlay">
-        <div class="fullscreen-controls">
-            <!-- Fullscreen button using SVG for better control -->
-            <button id="fullscreen-toggle" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-fullscreen">
-                    <path d="M4 8V4m0 0h4M4 4l5 5"></path>
-                    <path d="M20 16v4m0 0h-4M20 20l-5-5"></path>
-                    <path d="M4 16v4m0 0h4M4 20l5-5"></path>
-                    <path d="M20 8V4m0 0h-4M20 4l-5 5"></path>
-                </svg>
-            </button>
-            <!-- Zoom-in button using SVG (new hollow version) -->
-            <button id="zoom-in-button" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon icon-zoom-new">
-				  <circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-				  <line x1="14.5" y1="14.5" x2="20" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				  <line x1="8" y1="10" x2="12" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				  <line x1="10" y1="8" x2="10" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				</svg>
-            </button>
-            <!-- Close button -->
-            <button id="fullscreen-close" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon icon-close">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <img id="fullscreen-image" class="fullscreen-image" src="" alt="全屏照片">
-        <!-- Fullscreen navigation buttons -->
-        <button id="fullscreenPrev" class="fullscreen-nav-button">&#10094;</button>
-        <button id="fullscreenNext" class="fullscreen-nav-button">&#10095;</button>
-    </div>
-
-
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>----</abbr><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='exposure'>1/160s</abbr></div><abbr title='date'>Fri Aug 15 14:35:50 2025</abbr>-->
+          </div>
+          <figcaption>20250815-DSC01202 - Fri Aug 15 14:35:50 2025</figcaption>
+        </figure>
+  </div>
 
         <div id="description" class="row">
         广州天河商场。一百块的手动头拍拍静物看起来还行。

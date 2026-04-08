@@ -4,7 +4,7 @@ html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, 
 }
 
 body {
-  background: white;
+  background: #EEE;
   font-family: "myriad-pro","Myriad Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 18px;
   line-height: 26px;
@@ -26,6 +26,11 @@ a {
 }
 a:hover {
   color: #C00;
+}
+
+abbr[title] {
+  text-decoration: none;
+  border-bottom: none;
 }
 
 img {
@@ -54,7 +59,7 @@ h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 35px;
+  font-size: 48px;
   line-height: 1;
   margin: 1em;
   font-weight: 600;
@@ -64,10 +69,6 @@ h1 {
 h1 a {
   text-decoration: none;
   color: #282B30;
-  font-family: Georgia, serif;
-  font-style: italic;
-  letter-spacing: 1px;
-  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.1);
 }
 
 strong {
@@ -83,14 +84,9 @@ figcaption {
 }
 
 .content {
-  max-width: 50vw;
+  max-width: 1024px;
   margin: 24px auto;
-}
-@media (max-width: 768px) {
-    .content {
-        max-width: 100vw;
-        padding: 0px 5px;
-    }
+  padding:2em 0;
 }
 
 #menu {
@@ -113,8 +109,11 @@ figcaption {
   width: 100%;
   padding: 2em 0;
   margin: auto;
-  background: white;
+  background: #EEE none repeat scroll 0 0;
   float:left;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
 }
 
 .thumbnail {
@@ -125,13 +124,17 @@ figcaption {
   max-width: 85%;
   height: auto;
   margin: 0 2px 5px 2px;
-  border: 10px solid #fff;
+  /*border: 10px solid #fff;*/
   border-radius: 2px 2px 2px 2px;
   box-shadow: 0 0 3px #B1B1B1;
-  padding: 0 0 2px;
+  /*padding: 0 0 2px;*/
 }
 .thumbnail img:hover {
   box-shadow: 0 0 5px #818181;
+}
+
+.breadcrumb {
+  margin-left: 1em;
 }
 
 .album_title {
@@ -179,21 +182,36 @@ figcaption {
   height: auto;
   float: left;
   padding-top:1em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
 }
 .gallery a {
   line-height: 0;
 }
 
-.gallery__img--main a{
-  width: auto;
-  height: auto;
-}
-
 .menu-img,
+.gallery__img--main,
 .gallery__img--secondary {
   width: 25%;
-  float:left;
   margin-bottom: 1em;
+}
+
+.menu-img.thumbnail,
+.gallery figure.thumbnail {
+  box-sizing: border-box;
+  padding: 0 4px;
+  float: none;
+}
+
+.menu-img.thumbnail > a,
+.gallery figure.thumbnail > a {
+  display: block;
+}
+
+.menu-img.thumbnail > a > img,
+.gallery figure.thumbnail > a > img {
+  height: auto;
 }
 
 .gallery__title {
@@ -222,6 +240,7 @@ footer span:not(:last-child):after {
     font-size: 40px;
   }
   .menu-img,
+  .gallery__img--main,
   .gallery__img--secondary {
     width: 33%;
   }
@@ -230,6 +249,7 @@ footer span:not(:last-child):after {
 
 @media screen and (max-width: 500px) {
   .menu-img,
+  .gallery__img--main,
   .gallery__img--secondary {
     width: 50%;
   }
@@ -238,6 +258,7 @@ footer span:not(:last-child):after {
 
 @media screen and (max-width: 300px) {
   .menu-img,
+  .gallery__img--main,
   .gallery__img--secondary {
     width: 100%;
   }

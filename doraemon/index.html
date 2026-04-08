@@ -4,369 +4,312 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>哆啦A梦</title>
+    <title>哆啦A梦 - </title>
     <meta name="description" content="">
     <meta name="author" content="&lt;a href=&#34;https://zguishen.com/&#34; target=&#34;_blank&#34;&gt;zguishen&lt;/a&gt;">
     <meta name="viewport" content="width=device-width">
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="../static/moments.css">
-  <script type="text/javascript" src="../static/moments.js"></script>
-  
+  <link rel="stylesheet" href="../static/photoswipe.css">
+  <script type="module">
+  import PhotoSwipeLightbox from '../static/photoswipe-lightbox.esm.min.js';
+  import PhotoSwipe from '../static/photoswipe.esm.min.js';
+  import PhotoSwipeDynamicCaption from '../static/photoswipe-dynamic-caption-plugin.esm.min.js';
+  import PhotoSwipeFullscreen from '../static/photoswipe-fullscreen.esm.min.js';
+  import PhotoSwipeVideoPlugin from '../static/photoswipe-video-plugin.esm.min.js';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.gallery',
+    children: '.thumbnail',
+    pswpModule: PhotoSwipe
+  });
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {type: 'auto'});
+  const fullscreenPlugin = new PhotoSwipeFullscreen(lightbox);
+  const videoPlugin = new PhotoSwipeVideoPlugin(lightbox, {autoplay: true});
+
+  lightbox.on('uiRegister', function() {
+    lightbox.pswp.ui.registerElement({
+      name: 'download-button',
+      order: 8,
+      isButton: true,
+      tagName: 'a',
+      html: {
+        isCustomSVG: true,
+        inner: '<path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" id="pswp__icn-download"/>',
+        outlineID: 'pswp__icn-download'
+      },
+      onInit: (el, pswp) => {
+        el.setAttribute('download', '');
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener');
+        pswp.on('change', () => {
+          if (pswp.currSlide.data.element.children[0].dataset.big) {
+            el.href = pswp.currSlide.data.element.children[0].dataset.big;
+          } else {
+            el.href = pswp.currSlide.data.src;
+          }
+        });
+      }
+    });
+  });
+
+  lightbox.init();
+  </script>
     <link rel="stylesheet" href="../static/styles.css">
   </head>
   <body>
     <div class="container">
-      <h1><a href="../">哆啦A梦</a></h1>
+      <h1><a href="../">zguishen&#39;s gallery</a></h1>
 
 
       <div class="content">
-
-    <div class="container-sub">
-        <div class="main-photo-section">
-            <!-- Main photo display area -->
-            <div class="main-photo-wrapper">
-                <img id="mainImage" class="main-photo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=" alt="">
-            </div>
-
-            <!-- Photo information display area -->
-            <div class="photo-info">
-                <div class="left-info">
-                    <span id="cameraBrand" class="brand"></span>
-					          <span id="lensModel" class="detail"></span>
-                    <span id="photoDetails" class="detail"></span>
-                    <span id="cameraModel" style="display:none"></span>
-                </div>
-                <div class="right-info">
-                    <span id="remark"></span>
-				          	<span id="photoDate"></span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Thumbnail navigation bar -->
-        <div class="thumbnail-navigation">
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-TZTH5655.jpg"
-              data-details="ISO 50 F1.8 24mm 1/70s"
-              data-date="2025-08-08 19:23:30"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-TZTH5655.jpg" alt="20250808-TZTH5655">
+  <div class="breadcrumb">
+    <h2>
+        <a href=".">哆啦A梦</a></h2>
+  </div>
+  <div class="gallery">
+        <figure class="gallery__img--main thumbnail">
+          <a href="20250808-VBCH7045.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1200">
+             <img src="thumbnails/20250808-VBCH7045.jpg" alt="20250808-VBCH7045.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-BMPB9423.jpg"
-              data-details="ISO 50 F1.8 24mm 1/60s"
-              data-date="2025-08-08 19:27:25"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-BMPB9423.jpg" alt="20250808-BMPB9423">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 50 </abbr><abbr title='aperture'>F1.8 </abbr><abbr title='focal length'>7mm </abbr><abbr title='exposure'>1/75s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.120609918333333&amp;mlon=113.32021739833333&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.120610E113.320217</a><abbr title='date'>Fri Aug  8 19:57:18 2025</abbr>-->
+          </div>
+          <figcaption>20250808-VBCH7045 - Fri Aug  8 19:57:18 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-TZTH5655.jpg"
+             data-pswp-width="1199"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-TZTH5655.jpg" alt="20250808-TZTH5655.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00129.jpg"
-              data-details="ISO 400 F5.6 24mm 1/20s"
-              data-date="2025-08-08 19:29:15"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00129.jpg" alt="20250808-DSC00129">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 50 </abbr><abbr title='aperture'>F1.8 </abbr><abbr title='focal length'>7mm </abbr><abbr title='exposure'>1/70s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.12084205&amp;mlon=113.32032771&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.120842E113.320328</a><abbr title='date'>Fri Aug  8 19:23:30 2025</abbr>-->
+          </div>
+          <figcaption>20250808-TZTH5655 - Fri Aug  8 19:23:30 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-HVBJ8352.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1200">
+             <img src="thumbnails/20250808-HVBJ8352.jpg" alt="20250808-HVBJ8352.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00130.jpg"
-              data-details="ISO 640 F5.6 24mm 1/20s"
-              data-date="2025-08-08 19:29:29"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00130.jpg" alt="20250808-DSC00130">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 2.22mm f/2.2</abbr><div class='film-meta'><abbr title='film speed'>ISO 50 </abbr><abbr title='aperture'>F2.2 </abbr><abbr title='focal length'>2mm </abbr><abbr title='exposure'>1/40s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.120609918333333&amp;mlon=113.32021739833333&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.120610E113.320217</a><abbr title='date'>Fri Aug  8 19:57:26 2025</abbr>-->
+          </div>
+          <figcaption>20250808-HVBJ8352 - Fri Aug  8 19:57:26 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00166.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-DSC00166.jpg" alt="20250808-DSC00166.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00142.jpg"
-              data-details="ISO 500 F8 39mm 1/20s"
-              data-date="2025-08-08 19:32:07"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00142.jpg" alt="20250808-DSC00142">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 320 </abbr><abbr title='aperture'>F5.0 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/25s</abbr></div><abbr title='date'>Fri Aug  8 19:41:14 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00166 - Fri Aug  8 19:41:14 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00163.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-DSC00163.jpg" alt="20250808-DSC00163.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00145.jpg"
-              data-details="ISO 500 F8 24mm 1/20s"
-              data-date="2025-08-08 19:34:06"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00145.jpg" alt="20250808-DSC00145">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 500 </abbr><abbr title='aperture'>F5.0 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/25s</abbr></div><abbr title='date'>Fri Aug  8 19:40:39 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00163 - Fri Aug  8 19:40:39 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00162.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-DSC00162.jpg" alt="20250808-DSC00162.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00147.jpg"
-              data-details="ISO 500 F5 24mm 1/25s"
-              data-date="2025-08-08 19:34:51"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00147.jpg" alt="20250808-DSC00147">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 320 </abbr><abbr title='aperture'>F5.0 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/25s</abbr></div><abbr title='date'>Fri Aug  8 19:40:17 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00162 - Fri Aug  8 19:40:17 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00161.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-DSC00161.jpg" alt="20250808-DSC00161.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00150.jpg"
-              data-details="ISO 320 F5 24mm 1/25s"
-              data-date="2025-08-08 19:36:28"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00150.jpg" alt="20250808-DSC00150">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 400 </abbr><abbr title='aperture'>F5.0 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/25s</abbr></div><abbr title='date'>Fri Aug  8 19:40:06 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00161 - Fri Aug  8 19:40:06 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00159.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-DSC00159.jpg" alt="20250808-DSC00159.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00152.jpg"
-              data-details="ISO 320 F5 24mm 1/25s"
-              data-date="2025-08-08 19:37:45"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00152.jpg" alt="20250808-DSC00152">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 320 </abbr><abbr title='aperture'>F5.0 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/25s</abbr></div><abbr title='date'>Fri Aug  8 19:39:51 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00159 - Fri Aug  8 19:39:51 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00157.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-DSC00157.jpg" alt="20250808-DSC00157.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00153.jpg"
-              data-details="ISO 400 F5 24mm 1/25s"
-              data-date="2025-08-08 19:38:33"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00153.jpg" alt="20250808-DSC00153">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 400 </abbr><abbr title='aperture'>F5.0 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/25s</abbr></div><abbr title='date'>Fri Aug  8 19:39:32 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00157 - Fri Aug  8 19:39:32 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00156.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-DSC00156.jpg" alt="20250808-DSC00156.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00155.jpg"
-              data-details="ISO 160 F5 24mm 1/25s"
-              data-date="2025-08-08 19:39:10"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00155.jpg" alt="20250808-DSC00155">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 250 </abbr><abbr title='aperture'>F5.0 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/25s</abbr></div><abbr title='date'>Fri Aug  8 19:39:19 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00156 - Fri Aug  8 19:39:19 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00155.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-DSC00155.jpg" alt="20250808-DSC00155.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00156.jpg"
-              data-details="ISO 250 F5 24mm 1/25s"
-              data-date="2025-08-08 19:39:19"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00156.jpg" alt="20250808-DSC00156">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 160 </abbr><abbr title='aperture'>F5.0 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/25s</abbr></div><abbr title='date'>Fri Aug  8 19:39:10 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00155 - Fri Aug  8 19:39:10 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00153.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-DSC00153.jpg" alt="20250808-DSC00153.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00157.jpg"
-              data-details="ISO 400 F5 24mm 1/25s"
-              data-date="2025-08-08 19:39:32"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00157.jpg" alt="20250808-DSC00157">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 400 </abbr><abbr title='aperture'>F5.0 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/25s</abbr></div><abbr title='date'>Fri Aug  8 19:38:33 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00153 - Fri Aug  8 19:38:33 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00152.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-DSC00152.jpg" alt="20250808-DSC00152.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00159.jpg"
-              data-details="ISO 320 F5 24mm 1/25s"
-              data-date="2025-08-08 19:39:51"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00159.jpg" alt="20250808-DSC00159">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 320 </abbr><abbr title='aperture'>F5.0 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/25s</abbr></div><abbr title='date'>Fri Aug  8 19:37:45 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00152 - Fri Aug  8 19:37:45 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00150.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-DSC00150.jpg" alt="20250808-DSC00150.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00161.jpg"
-              data-details="ISO 400 F5 24mm 1/25s"
-              data-date="2025-08-08 19:40:06"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00161.jpg" alt="20250808-DSC00161">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 320 </abbr><abbr title='aperture'>F5.0 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/25s</abbr></div><abbr title='date'>Fri Aug  8 19:36:28 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00150 - Fri Aug  8 19:36:28 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00147.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-DSC00147.jpg" alt="20250808-DSC00147.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00162.jpg"
-              data-details="ISO 320 F5 24mm 1/25s"
-              data-date="2025-08-08 19:40:17"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00162.jpg" alt="20250808-DSC00162">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 500 </abbr><abbr title='aperture'>F5.0 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/25s</abbr></div><abbr title='date'>Fri Aug  8 19:34:51 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00147 - Fri Aug  8 19:34:51 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00145.jpg"
+             data-pswp-width="1067"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250808-DSC00145.jpg" alt="20250808-DSC00145.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00163.jpg"
-              data-details="ISO 500 F5 24mm 1/25s"
-              data-date="2025-08-08 19:40:39"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00163.jpg" alt="20250808-DSC00163">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 500 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/20s</abbr></div><abbr title='date'>Fri Aug  8 19:34:06 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00145 - Fri Aug  8 19:34:06 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00142.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250808-DSC00142.jpg" alt="20250808-DSC00142.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-DSC00166.jpg"
-              data-details="ISO 320 F5 24mm 1/25s"
-              data-date="2025-08-08 19:41:14"
-              data-brand="SONY ZV-E10"
-              data-model=""
-              data-lens="E PZ 16-50mm F3.5-5.6 OSS"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-DSC00166.jpg" alt="20250808-DSC00166">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 500 </abbr><abbr title='aperture'>F8.0 </abbr><abbr title='focal length'>26mm </abbr><abbr title='exposure'>1/20s</abbr></div><abbr title='date'>Fri Aug  8 19:32:07 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00142 - Fri Aug  8 19:32:07 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00130.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250808-DSC00130.jpg" alt="20250808-DSC00130.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-VBCH7045.jpg"
-              data-details="ISO 50 F1.8 24mm 1/75s"
-              data-date="2025-08-08 19:57:18"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-VBCH7045.jpg" alt="20250808-VBCH7045">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 640 </abbr><abbr title='aperture'>F5.6 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/20s</abbr></div><abbr title='date'>Fri Aug  8 19:29:29 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00130 - Fri Aug  8 19:29:29 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-DSC00129.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1067">
+             <img src="thumbnails/20250808-DSC00129.jpg" alt="20250808-DSC00129.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250808-HVBJ8352.jpg"
-              data-details="ISO 50 F2.2 14mm 1/40s"
-              data-date="2025-08-08 19:57:26"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 2.22mm f/2.2"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250808-HVBJ8352.jpg" alt="20250808-HVBJ8352">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>SONY ZV-E10</abbr>
+    <br><abbr title='camera make and model'>E PZ 16-50mm F3.5-5.6 OSS</abbr><div class='film-meta'><abbr title='film speed'>ISO 400 </abbr><abbr title='aperture'>F5.6 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/20s</abbr></div><abbr title='date'>Fri Aug  8 19:29:15 2025</abbr>-->
+          </div>
+          <figcaption>20250808-DSC00129 - Fri Aug  8 19:29:15 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250808-BMPB9423.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1200">
+             <img src="thumbnails/20250808-BMPB9423.jpg" alt="20250808-BMPB9423.jpg" />
           </a>
-        </div>
-    </div>
-    
-    <!-- Fullscreen Modal -->
-    <div id="fullscreen-overlay" class="fullscreen-overlay">
-        <div class="fullscreen-controls">
-            <!-- Fullscreen button using SVG for better control -->
-            <button id="fullscreen-toggle" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-fullscreen">
-                    <path d="M4 8V4m0 0h4M4 4l5 5"></path>
-                    <path d="M20 16v4m0 0h-4M20 20l-5-5"></path>
-                    <path d="M4 16v4m0 0h4M4 20l5-5"></path>
-                    <path d="M20 8V4m0 0h-4M20 4l-5 5"></path>
-                </svg>
-            </button>
-            <!-- Zoom-in button using SVG (new hollow version) -->
-            <button id="zoom-in-button" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon icon-zoom-new">
-				  <circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-				  <line x1="14.5" y1="14.5" x2="20" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				  <line x1="8" y1="10" x2="12" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				  <line x1="10" y1="8" x2="10" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				</svg>
-            </button>
-            <!-- Close button -->
-            <button id="fullscreen-close" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon icon-close">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <img id="fullscreen-image" class="fullscreen-image" src="" alt="全屏照片">
-        <!-- Fullscreen navigation buttons -->
-        <button id="fullscreenPrev" class="fullscreen-nav-button">&#10094;</button>
-        <button id="fullscreenNext" class="fullscreen-nav-button">&#10095;</button>
-    </div>
-
-
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 50 </abbr><abbr title='aperture'>F1.8 </abbr><abbr title='focal length'>7mm </abbr><abbr title='exposure'>1/60s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.12084205&amp;mlon=113.32032771&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.120842E113.320328</a><abbr title='date'>Fri Aug  8 19:27:25 2025</abbr>-->
+          </div>
+          <figcaption>20250808-BMPB9423 - Fri Aug  8 19:27:25 2025</figcaption>
+        </figure>
+  </div>
 
         <div id="description" class="row">
-        100%哆啦A梦&FRIENDS巡回特展 · 广州站
+        100%哆啦A梦&amp;FRIENDS巡回特展 · 广州站
         </div>
       </div>
 

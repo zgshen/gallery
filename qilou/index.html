@@ -4,170 +4,141 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>骑楼</title>
+    <title>骑楼 - </title>
     <meta name="description" content="">
     <meta name="author" content="&lt;a href=&#34;https://zguishen.com/&#34; target=&#34;_blank&#34;&gt;zguishen&lt;/a&gt;">
     <meta name="viewport" content="width=device-width">
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="../static/moments.css">
-  <script type="text/javascript" src="../static/moments.js"></script>
-  
+  <link rel="stylesheet" href="../static/photoswipe.css">
+  <script type="module">
+  import PhotoSwipeLightbox from '../static/photoswipe-lightbox.esm.min.js';
+  import PhotoSwipe from '../static/photoswipe.esm.min.js';
+  import PhotoSwipeDynamicCaption from '../static/photoswipe-dynamic-caption-plugin.esm.min.js';
+  import PhotoSwipeFullscreen from '../static/photoswipe-fullscreen.esm.min.js';
+  import PhotoSwipeVideoPlugin from '../static/photoswipe-video-plugin.esm.min.js';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.gallery',
+    children: '.thumbnail',
+    pswpModule: PhotoSwipe
+  });
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {type: 'auto'});
+  const fullscreenPlugin = new PhotoSwipeFullscreen(lightbox);
+  const videoPlugin = new PhotoSwipeVideoPlugin(lightbox, {autoplay: true});
+
+  lightbox.on('uiRegister', function() {
+    lightbox.pswp.ui.registerElement({
+      name: 'download-button',
+      order: 8,
+      isButton: true,
+      tagName: 'a',
+      html: {
+        isCustomSVG: true,
+        inner: '<path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" id="pswp__icn-download"/>',
+        outlineID: 'pswp__icn-download'
+      },
+      onInit: (el, pswp) => {
+        el.setAttribute('download', '');
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener');
+        pswp.on('change', () => {
+          if (pswp.currSlide.data.element.children[0].dataset.big) {
+            el.href = pswp.currSlide.data.element.children[0].dataset.big;
+          } else {
+            el.href = pswp.currSlide.data.src;
+          }
+        });
+      }
+    });
+  });
+
+  lightbox.init();
+  </script>
     <link rel="stylesheet" href="../static/styles.css">
   </head>
   <body>
     <div class="container">
-      <h1><a href="../">骑楼</a></h1>
+      <h1><a href="../">zguishen&#39;s gallery</a></h1>
 
 
       <div class="content">
-
-    <div class="container-sub">
-        <div class="main-photo-section">
-            <!-- Main photo display area -->
-            <div class="main-photo-wrapper">
-                <img id="mainImage" class="main-photo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=" alt="">
-            </div>
-
-            <!-- Photo information display area -->
-            <div class="photo-info">
-                <div class="left-info">
-                    <span id="cameraBrand" class="brand"></span>
-					          <span id="lensModel" class="detail"></span>
-                    <span id="photoDetails" class="detail"></span>
-                    <span id="cameraModel" style="display:none"></span>
-                </div>
-                <div class="right-info">
-                    <span id="remark"></span>
-				          	<span id="photoDate"></span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Thumbnail navigation bar -->
-        <div class="thumbnail-navigation">
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250726-HYQN9089.jpg"
-              data-details="ISO 50 F2.2 14mm 1/19000s"
-              data-date="2025-07-26 17:17:32"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 2.22mm f/2.2"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250726-HYQN9089.jpg" alt="20250726-HYQN9089">
+  <div class="breadcrumb">
+    <h2>
+        <a href=".">骑楼</a></h2>
+  </div>
+  <div class="gallery">
+        <figure class="gallery__img--main thumbnail">
+          <a href="20250726-IMG_7329.jpg"
+             data-pswp-width="1200"
+             data-pswp-height="1600">
+             <img src="thumbnails/20250726-IMG_7329.jpg" alt="20250726-IMG_7329.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250726-IMG_7307.jpg"
-              data-details="ISO 16 F2.2 14mm 1/320s"
-              data-date="2025-07-26 17:20:27"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back triple camera 2.22mm f/2.2"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250726-IMG_7307.jpg" alt="20250726-IMG_7307">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back triple camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 64 </abbr><abbr title='aperture'>F1.8 </abbr><abbr title='focal length'>7mm </abbr><abbr title='exposure'>1/390s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.125405555&amp;mlon=113.27058333333333&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.125406E113.270583</a><abbr title='date'>Sat Jul 26 17:52:53 2025</abbr>-->
+          </div>
+          <figcaption>20250726-IMG_7329 - Sat Jul 26 17:52:53 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250726-IMG_7323.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1200">
+             <img src="thumbnails/20250726-IMG_7323.jpg" alt="20250726-IMG_7323.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250726-IMG_7315.jpg"
-              data-details="ISO 32 F2.2 14mm 1/120s"
-              data-date="2025-07-26 17:29:01"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back triple camera 2.22mm f/2.2"
-              data-remark="嘉年华芬兰馆">
-            <img class="thumbnail-image" src="thumbnails/20250726-IMG_7315.jpg" alt="20250726-IMG_7315">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back triple camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 64 </abbr><abbr title='aperture'>F1.8 </abbr><abbr title='focal length'>7mm </abbr><abbr title='exposure'>1/1900s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.125455555&amp;mlon=113.27142222166667&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.125456E113.271422</a><abbr title='date'>Sat Jul 26 17:34:00 2025</abbr>-->
+          </div>
+          <figcaption>20250726-IMG_7323 - Sat Jul 26 17:34:00 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250726-IMG_7320.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1200">
+             <img src="thumbnails/20250726-IMG_7320.jpg" alt="20250726-IMG_7320.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250726-IMG_7320.jpg"
-              data-details="ISO 16 F2.2 14mm 1/300s"
-              data-date="2025-07-26 17:33:28"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back triple camera 2.22mm f/2.2"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250726-IMG_7320.jpg" alt="20250726-IMG_7320">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back triple camera 2.22mm f/2.2</abbr><div class='film-meta'><abbr title='film speed'>ISO 16 </abbr><abbr title='aperture'>F2.2 </abbr><abbr title='focal length'>2mm </abbr><abbr title='exposure'>1/300s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.125466666666668&amp;mlon=113.27130277833334&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.125467E113.271303</a><abbr title='date'>Sat Jul 26 17:33:28 2025</abbr>-->
+          </div>
+          <figcaption>20250726-IMG_7320 - Sat Jul 26 17:33:28 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250726-IMG_7315.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1200">
+             <img src="thumbnails/20250726-IMG_7315.jpg" alt="20250726-IMG_7315.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250726-IMG_7323.jpg"
-              data-details="ISO 64 F1.8 24mm 1/1900s"
-              data-date="2025-07-26 17:34:00"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back triple camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250726-IMG_7323.jpg" alt="20250726-IMG_7323">
+          <div class="pswp-caption-content">
+            <br>嘉年华芬兰馆<!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back triple camera 2.22mm f/2.2</abbr><div class='film-meta'><abbr title='film speed'>ISO 32 </abbr><abbr title='aperture'>F2.2 </abbr><abbr title='focal length'>2mm </abbr><abbr title='exposure'>1/120s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.124241666666666&amp;mlon=113.272569445&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.124242E113.272569</a><abbr title='date'>Sat Jul 26 17:29:01 2025</abbr>-->
+          </div>
+          <figcaption>20250726-IMG_7315 - Sat Jul 26 17:29:01 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250726-IMG_7307.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1200">
+             <img src="thumbnails/20250726-IMG_7307.jpg" alt="20250726-IMG_7307.jpg" />
           </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="20250726-IMG_7329.jpg"
-              data-details="ISO 64 F1.8 24mm 1/390s"
-              data-date="2025-07-26 17:52:53"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back triple camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/20250726-IMG_7329.jpg" alt="20250726-IMG_7329">
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back triple camera 2.22mm f/2.2</abbr><div class='film-meta'><abbr title='film speed'>ISO 16 </abbr><abbr title='aperture'>F2.2 </abbr><abbr title='focal length'>2mm </abbr><abbr title='exposure'>1/320s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.120916666666666&amp;mlon=113.272055555&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.120917E113.272056</a><abbr title='date'>Sat Jul 26 17:20:27 2025</abbr>-->
+          </div>
+          <figcaption>20250726-IMG_7307 - Sat Jul 26 17:20:27 2025</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20250726-HYQN9089.jpg"
+             data-pswp-width="1600"
+             data-pswp-height="1200">
+             <img src="thumbnails/20250726-HYQN9089.jpg" alt="20250726-HYQN9089.jpg" />
           </a>
-        </div>
-    </div>
-    
-    <!-- Fullscreen Modal -->
-    <div id="fullscreen-overlay" class="fullscreen-overlay">
-        <div class="fullscreen-controls">
-            <!-- Fullscreen button using SVG for better control -->
-            <button id="fullscreen-toggle" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-fullscreen">
-                    <path d="M4 8V4m0 0h4M4 4l5 5"></path>
-                    <path d="M20 16v4m0 0h-4M20 20l-5-5"></path>
-                    <path d="M4 16v4m0 0h4M4 20l5-5"></path>
-                    <path d="M20 8V4m0 0h-4M20 4l-5 5"></path>
-                </svg>
-            </button>
-            <!-- Zoom-in button using SVG (new hollow version) -->
-            <button id="zoom-in-button" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon icon-zoom-new">
-				  <circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-				  <line x1="14.5" y1="14.5" x2="20" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				  <line x1="8" y1="10" x2="12" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				  <line x1="10" y1="8" x2="10" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				</svg>
-            </button>
-            <!-- Close button -->
-            <button id="fullscreen-close" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon icon-close">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <img id="fullscreen-image" class="fullscreen-image" src="" alt="全屏照片">
-        <!-- Fullscreen navigation buttons -->
-        <button id="fullscreenPrev" class="fullscreen-nav-button">&#10094;</button>
-        <button id="fullscreenNext" class="fullscreen-nav-button">&#10095;</button>
-    </div>
-
-
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 2.22mm f/2.2</abbr><div class='film-meta'><abbr title='film speed'>ISO 50 </abbr><abbr title='aperture'>F2.2 </abbr><abbr title='focal length'>2mm </abbr><abbr title='exposure'>1/19000s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.120704631666666&amp;mlon=113.272820005&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.120705E113.272820</a><abbr title='date'>Sat Jul 26 17:17:32 2025</abbr>-->
+          </div>
+          <figcaption>20250726-HYQN9089 - Sat Jul 26 17:17:32 2025</figcaption>
+        </figure>
+  </div>
 
       </div>
 
