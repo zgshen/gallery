@@ -30,7 +30,7 @@ theme = "photoswipe"
 
 # Author. Used in the footer of the pages and in the author meta tag.
 # author = ''
-author = '<a href="https://zguishen.com/" target="_blank">zguishen</a>'
+author = '<a href="https://zgshen.github.io/" target="_blank">zguishen</a>'
 sigal_link = 'https://github.com/zgshen/sigal'
 
 # Use originals in gallery (default: False). If True, this will bypass all
