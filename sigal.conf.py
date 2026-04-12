@@ -166,7 +166,7 @@ albums_sort_reverse = True
 # medias_sort_attr = 'filename'
 
 # Reverse sort for medias
-medias_sort_reverse = True
+medias_sort_reverse = False
 
 # Filter directories and files.
 # The settings take a list of patterns matched with the fnmatch module on the
