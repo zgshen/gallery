@@ -3,5 +3,6 @@ package-lock.json
 .hugo_build.lock
 public/
 resources/
+venv/
 _build
 build.sh

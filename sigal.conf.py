@@ -118,7 +118,8 @@ img_size = (800, 600)
 # Thumbnail size (default: (200, 150))
 # For the galleria theme, use 280 px for the width
 # For the colorbox and photoswipe theme, use 200 px for the width
-thumb_size = (280, 210)
+#thumb_size = (280, 210)
+thumb_size = (560, 420)
 
 # Crop the image to fill the box
 # thumb_fit = True
