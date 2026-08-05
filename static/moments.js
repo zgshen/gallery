@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Get all elements we need to interact with
     const mainImage = document.getElementById('mainImage');
+    const mainImagePreview = document.getElementById('mainImagePreview');
     const cameraBrand = document.getElementById('cameraBrand');
     const photoDetails = document.getElementById('photoDetails');
     const photoDate = document.getElementById('photoDate');
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     let currentZoomLevel = 1.0;
     let isZoomed = false;
+    let imageLoadRequest = 0;
 
     // Function to update the main photo and its information
     const updateMainPhoto = (index) => {
@@ -35,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Get data from the clicked thumbnail's custom data attributes
         const src = link.dataset.src;
+        const thumbnail = link.querySelector('.thumbnail-image');
+        const thumbnailSrc = thumbnail.currentSrc || thumbnail.src;
         const details = link.dataset.details;
         const date = link.dataset.date;
         const brand = link.dataset.brand;
@@ -42,8 +46,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const lens = link.dataset.lens;
         const photoBy = link.dataset.remark;
 
-        // Update the main image and text content
-        mainImage.src = src;
+        // Show a blurred thumbnail immediately while the full-size image loads.
+        // The request number prevents a slow, earlier request from replacing a
+        // picture selected more recently.
+        const request = ++imageLoadRequest;
+        mainImage.classList.remove('is-loaded');
+        mainImagePreview.src = thumbnailSrc;
+        mainImagePreview.classList.add('is-visible');
+        mainImage.alt = thumbnail.alt;
+
+        if (fullscreenOverlay.classList.contains('active')) {
+            fullscreenImage.src = thumbnailSrc;
+            fullscreenImage.classList.add('is-loading');
+        }
+
+        const fullImage = new Image();
+        fullImage.onload = () => {
+            if (request !== imageLoadRequest) {
+                return;
+            }
+
+            mainImage.src = src;
+            mainImage.classList.add('is-loaded');
+            mainImagePreview.classList.remove('is-visible');
+
+            if (fullscreenOverlay.classList.contains('active')) {
+                fullscreenImage.src = src;
+                fullscreenImage.classList.remove('is-loading');
+            }
+        };
+        fullImage.onerror = () => {
+            if (request === imageLoadRequest) {
+                mainImagePreview.classList.add('is-visible');
+            }
+        };
+        fullImage.src = src;
+
+        // Update the photo information while its full-size version loads.
         cameraBrand.textContent = brand;
         photoDetails.textContent = details;
         photoDate.textContent = date;
@@ -74,7 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fullscreen functionality
     mainImage.addEventListener('click', () => {
-        fullscreenImage.src = mainImage.src;
+        const isLoading = !mainImage.classList.contains('is-loaded');
+        fullscreenImage.src = isLoading ? mainImagePreview.src : mainImage.src;
+        fullscreenImage.classList.toggle('is-loading', isLoading);
         fullscreenOverlay.classList.add('active');
     });
     
@@ -90,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     fullscreenPrev.addEventListener('click', () => {
         updateMainPhoto(currentIndex - 1);
-        fullscreenImage.src = mainImage.src;
         // Reset zoom on image change
         fullscreenImage.style.transform = 'scale(1)';
         fullscreenImage.classList.remove('zoomed');
@@ -100,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fullscreenNext.addEventListener('click', () => {
         updateMainPhoto(currentIndex + 1);
-        fullscreenImage.src = mainImage.src;
         // Reset zoom on image change
         fullscreenImage.style.transform = 'scale(1)';
         fullscreenImage.classList.remove('zoomed');
