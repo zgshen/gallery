@@ -22,8 +22,8 @@ source = "pictures"
 # Theme :
 # - colorbox (default), galleria, photoswipe, moments, or the path to a custom theme
 # directory
-#theme = "moments"
-theme = "photoswipe"
+theme = "moments"
+#theme = "photoswipe"
 
 # Theme for galleria (https://galleriajs.github.io/themes/)
 # galleria_theme = 'classic'
