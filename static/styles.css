@@ -121,6 +121,7 @@ figcaption {
   padding: 2em 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
   gap: 2em 0;
   background: white;
 }
@@ -142,7 +143,7 @@ figcaption {
   max-width: 85%;
   height: auto;
   margin: 0 2px 5px 2px;
-  /*border: 10px solid #fff;*/
+  border: 10px solid #fff;
   border-radius: 2px 2px 2px 2px;
   box-shadow: 0 0 3px #B1B1B1;
   /*padding: 0 0 2px;*/
