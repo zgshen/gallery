@@ -126,6 +126,12 @@ figcaption {
   background: white;
 }
 
+/* On the home page #description follows .album-list.  Its inset matches the
+   centered album cover, including the cover's white border. */
+.album-list + #description {
+  margin: 0 1em;
+}
+
 /* Album covers must follow a regular grid.  The generic .menu-img rule below
    uses floats for the media gallery, which otherwise makes album cards flow
    around covers with different heights. */
