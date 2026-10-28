@@ -8,269 +8,239 @@
     <meta name="description" content="">
     <meta name="author" content="&lt;a href=&#34;https://zgshen.github.io/&#34; target=&#34;_blank&#34;&gt;zguishen&lt;/a&gt;">
     <meta name="viewport" content="width=device-width">
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="../static/moments.css">
-  <script type="text/javascript" src="../static/moments.js"></script>
-  
+  <link rel="stylesheet" href="../static/photoswipe.css">
+  <script type="module">
+  import PhotoSwipeLightbox from '../static/photoswipe-lightbox.esm.min.js';
+  import PhotoSwipe from '../static/photoswipe.esm.min.js';
+  import PhotoSwipeDynamicCaption from '../static/photoswipe-dynamic-caption-plugin.esm.min.js';
+  import PhotoSwipeFullscreen from '../static/photoswipe-fullscreen.esm.min.js';
+  import PhotoSwipeVideoPlugin from '../static/photoswipe-video-plugin.esm.min.js';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.gallery',
+    children: '.thumbnail',
+    pswpModule: PhotoSwipe
+  });
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {type: 'auto'});
+  const fullscreenPlugin = new PhotoSwipeFullscreen(lightbox);
+  const videoPlugin = new PhotoSwipeVideoPlugin(lightbox, {autoplay: true});
+
+  lightbox.on('uiRegister', function() {
+    lightbox.pswp.ui.registerElement({
+      name: 'download-button',
+      order: 8,
+      isButton: true,
+      tagName: 'a',
+      html: {
+        isCustomSVG: true,
+        inner: '<path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" id="pswp__icn-download"/>',
+        outlineID: 'pswp__icn-download'
+      },
+      onInit: (el, pswp) => {
+        el.setAttribute('download', '');
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener');
+        pswp.on('change', () => {
+          if (pswp.currSlide.data.element.children[0].dataset.big) {
+            el.href = pswp.currSlide.data.element.children[0].dataset.big;
+          } else {
+            el.href = pswp.currSlide.data.src;
+          }
+        });
+      }
+    });
+  });
+
+  lightbox.init();
+  </script>
     <link rel="stylesheet" href="../static/styles.css">
   </head>
   <body>
     <div class="container">
-      <h1><a href="../">Dazz 相机</a></h1>
+      <h1><a href="../">Licorice</a></h1>
 
 
       <div class="content">
-
-    <div class="container-sub">
-        <div class="main-photo-section">
-            <!-- Main photo display area -->
-            <div class="main-photo-wrapper">
-                <img id="mainImagePreview" class="main-photo main-photo--preview" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=" alt="" aria-hidden="true">
-                <img id="mainImage" class="main-photo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=" alt="">
-            </div>
-
-            <!-- Photo information display area -->
-            <div class="photo-info">
-                <div class="left-info">
-                    <span id="cameraBrand" class="brand"></span>
-					          <span id="lensModel" class="detail"></span>
-                    <span id="photoDetails" class="detail"></span>
-                    <span id="cameraModel" style="display:none"></span>
-                </div>
-                <div class="right-info">
-                    <span id="remark"></span>
-				          	<span id="photoDate"></span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Thumbnail navigation bar -->
-        <div class="thumbnail-navigation">
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="ofm-2026-02-18-15200789A93B5A5257.JPEG"
-              data-details="ISO 40 F2.8 120mm 1/167s"
-              data-date="2026-02-18 15:20:07"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 15.66mm f/2.8"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/ofm-2026-02-18-15200789A93B5A5257.JPEG" alt="ofm-2026-02-18-15200789A93B5A5257">
-          </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="ofm-2026-03-06-15200789A93B5A0000.JPG"
-              data-details="ISO 80 F1.78 24mm 1/1855s"
-              data-date="2026-03-06 11:06:11"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/ofm-2026-03-06-15200789A93B5A0000.JPG" alt="ofm-2026-03-06-15200789A93B5A0000">
-          </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="ofm-2026-03-06-16392091A6BC3BB131.JPEG"
-              data-details="ISO 80 F1.78 24mm 1/6173s"
-              data-date="2026-03-06 16:39:20"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/ofm-2026-03-06-16392091A6BC3BB131.JPEG" alt="ofm-2026-03-06-16392091A6BC3BB131">
-          </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="ofm-2026-03-06-164827DD9B0B4D8753.JPEG"
-              data-details="ISO 64 F1.78 24mm 2026/28943437s"
-              data-date="2026-03-06 16:48:27"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/ofm-2026-03-06-164827DD9B0B4D8753.JPEG" alt="ofm-2026-03-06-164827DD9B0B4D8753">
-          </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="ofm-2026-05-25-15200789A93B5A1111.JPG"
-              data-details="ISO 80 F1.78 35mm 4873/58013066s"
-              data-date="2026-05-25 18:13:23"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/ofm-2026-05-25-15200789A93B5A1111.JPG" alt="ofm-2026-05-25-15200789A93B5A1111">
-          </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="ofm-2026-06-30-163140C722A3997400.JPG"
-              data-details="ISO 80 F1.78 35mm 61937/48806357s"
-              data-date="2026-06-30 16:31:40"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/ofm-2026-06-30-163140C722A3997400.JPG" alt="ofm-2026-06-30-163140C722A3997400">
-          </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="ofm-2026-06-30-1708140C3835E534E7.JPEG"
-              data-details="ISO 80 F1.78 35mm 1/363s"
-              data-date="2026-06-30 17:08:14"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/ofm-2026-06-30-1708140C3835E534E7.JPEG" alt="ofm-2026-06-30-1708140C3835E534E7">
-          </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="ofm-2026-07-02-184535ED2EDE1E64D5.JPEG"
-              data-details="ISO 80 F1.78 35mm 1/654s"
-              data-date="2026-07-02 18:45:35"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/ofm-2026-07-02-184535ED2EDE1E64D5.JPEG" alt="ofm-2026-07-02-184535ED2EDE1E64D5">
-          </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="ofm-2026-07-10-18315331A9DAF8E650.JPEG"
-              data-details="ISO 80 F1.78 35mm 1/5714s"
-              data-date="2026-07-10 18:31:53"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/ofm-2026-07-10-18315331A9DAF8E650.JPEG" alt="ofm-2026-07-10-18315331A9DAF8E650">
-          </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="ofm-2026-07-11-172635324597FD301D.JPEG"
-              data-details="ISO 40 F2.8 120mm 1/100s"
-              data-date="2026-07-11 17:26:35"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 15.66mm f/2.8"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/ofm-2026-07-11-172635324597FD301D.JPEG" alt="ofm-2026-07-11-172635324597FD301D">
-          </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="ofm-2026-07-12-1619459CFC2744BE22.JPEG"
-              data-details="ISO 125 F1.78 35mm 1/240s"
-              data-date="2026-07-12 16:19:45"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/ofm-2026-07-12-1619459CFC2744BE22.JPEG" alt="ofm-2026-07-12-1619459CFC2744BE22">
-          </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="ofm-2026-07-12-170818E359DC922ADC.JPEG"
-              data-details="ISO 80 F1.78 35mm 1/385s"
-              data-date="2026-07-12 17:08:18"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 6.765mm f/1.78"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/ofm-2026-07-12-170818E359DC922ADC.JPEG" alt="ofm-2026-07-12-170818E359DC922ADC">
-          </a>
-
-
-
-          
-          <a href="#" class="thumbnail-link active"
-              data-src="ofm-2026-07-31-181134DC8507F09B96.jpg"
-              data-details="ISO 50 F2.8 120mm 52326/56512081s"
-              data-date="2026-07-31 18:11:34"
-              data-brand="Apple iPhone 16 Pro"
-              data-model=""
-              data-lens="iPhone 16 Pro back camera 15.66mm f/2.8"
-              data-remark="">
-            <img class="thumbnail-image" src="thumbnails/ofm-2026-07-31-181134DC8507F09B96.jpg" alt="ofm-2026-07-31-181134DC8507F09B96">
-          </a>
-        </div>
-    </div>
-    
-    <!-- Fullscreen Modal -->
-    <div id="fullscreen-overlay" class="fullscreen-overlay">
-        <div class="fullscreen-controls">
-            <!-- Fullscreen button using SVG for better control -->
-            <button id="fullscreen-toggle" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-fullscreen">
-                    <path d="M4 8V4m0 0h4M4 4l5 5"></path>
-                    <path d="M20 16v4m0 0h-4M20 20l-5-5"></path>
-                    <path d="M4 16v4m0 0h4M4 20l5-5"></path>
-                    <path d="M20 8V4m0 0h-4M20 4l-5 5"></path>
-                </svg>
-            </button>
-            <!-- Zoom-in button using SVG (new hollow version) -->
-            <button id="zoom-in-button" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon icon-zoom-new">
-				  <circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-				  <line x1="14.5" y1="14.5" x2="20" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				  <line x1="8" y1="10" x2="12" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				  <line x1="10" y1="8" x2="10" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-				</svg>
-            </button>
-            <!-- Close button -->
-            <button id="fullscreen-close" class="fullscreen-control-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon icon-close">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <img id="fullscreen-image" class="fullscreen-image" src="" alt="全屏照片">
-        <!-- Fullscreen navigation buttons -->
-        <button id="fullscreenPrev" class="fullscreen-nav-button">&#10094;</button>
-        <button id="fullscreenNext" class="fullscreen-nav-button">&#10095;</button>
-    </div>
-
-
+  <div class="breadcrumb">
+    <h2>
+        <p href=".">Dazz 相机</p></h2>
+  </div>
 
         <div id="description" class="row">
         复古胶片和CCD效果
         </div>
+        
+  <div class="gallery">
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="ofm-2026-07-31-181134DC8507F09B96.jpg"
+             data-pswp-width="2741"
+             data-pswp-height="1827">
+             <img src="thumbnails/ofm-2026-07-31-181134DC8507F09B96.jpg" alt="ofm-2026-07-31-181134DC8507F09B96.jpg"
+                  loading="eager" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 15.66mm f/2.8</abbr><div class='film-meta'><abbr title='film speed'>ISO 50 </abbr><abbr title='aperture'>F2.8 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>52326/56512081s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.1437&amp;mlon=113.25856666666667&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.143700E113.258567</a><abbr title='date'>Fri Jul 31 18:11:34 2026</abbr>-->
+          </div>
+          <figcaption>ofm-2026-07-31-181134DC8507F09B96 - Fri Jul 31 18:11:34 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="ofm-2026-07-12-1619459CFC2744BE22.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2001">
+             <img src="thumbnails/ofm-2026-07-12-1619459CFC2744BE22.JPEG" alt="ofm-2026-07-12-1619459CFC2744BE22.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 125 </abbr><abbr title='aperture'>F1.7799999713880652 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/240s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.134752777777777&amp;mlon=113.32144722222222&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.134753E113.321447</a><abbr title='date'>Sun Jul 12 16:19:45 2026</abbr>-->
+          </div>
+          <figcaption>ofm-2026-07-12-1619459CFC2744BE22 - Sun Jul 12 16:19:45 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="ofm-2026-07-12-170818E359DC922ADC.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2001">
+             <img src="thumbnails/ofm-2026-07-12-170818E359DC922ADC.JPEG" alt="ofm-2026-07-12-170818E359DC922ADC.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 80 </abbr><abbr title='aperture'>F1.7799999713880652 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/385s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.134822222222223&amp;mlon=113.32145&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.134822E113.321450</a><abbr title='date'>Sun Jul 12 17:08:18 2026</abbr>-->
+          </div>
+          <figcaption>ofm-2026-07-12-170818E359DC922ADC - Sun Jul 12 17:08:18 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="ofm-2026-07-11-172635324597FD301D.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2000">
+             <img src="thumbnails/ofm-2026-07-11-172635324597FD301D.JPEG" alt="ofm-2026-07-11-172635324597FD301D.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 15.66mm f/2.8</abbr><div class='film-meta'><abbr title='film speed'>ISO 40 </abbr><abbr title='aperture'>F2.8 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/100s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.085963888888887&amp;mlon=113.52847222222222&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.085964E113.528472</a><abbr title='date'>Sat Jul 11 17:26:35 2026</abbr>-->
+          </div>
+          <figcaption>ofm-2026-07-11-172635324597FD301D - Sat Jul 11 17:26:35 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="ofm-2026-07-10-18315331A9DAF8E650.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2001">
+             <img src="thumbnails/ofm-2026-07-10-18315331A9DAF8E650.JPEG" alt="ofm-2026-07-10-18315331A9DAF8E650.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 80 </abbr><abbr title='aperture'>F1.7799999713880652 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/5714s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.127647222222222&amp;mlon=113.35849999999999&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.127647E113.358500</a><abbr title='date'>Fri Jul 10 18:31:53 2026</abbr>-->
+          </div>
+          <figcaption>ofm-2026-07-10-18315331A9DAF8E650 - Fri Jul 10 18:31:53 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="ofm-2026-07-02-184535ED2EDE1E64D5.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2001">
+             <img src="thumbnails/ofm-2026-07-02-184535ED2EDE1E64D5.JPEG" alt="ofm-2026-07-02-184535ED2EDE1E64D5.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 80 </abbr><abbr title='aperture'>F1.7799999713880652 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/654s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.142397222222222&amp;mlon=113.27015555555556&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.142397E113.270156</a><abbr title='date'>Thu Jul  2 18:45:35 2026</abbr>-->
+          </div>
+          <figcaption>ofm-2026-07-02-184535ED2EDE1E64D5 - Thu Jul  2 18:45:35 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="ofm-2026-06-30-1708140C3835E534E7.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2001">
+             <img src="thumbnails/ofm-2026-06-30-1708140C3835E534E7.JPEG" alt="ofm-2026-06-30-1708140C3835E534E7.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 80 </abbr><abbr title='aperture'>F1.7799999713880652 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/363s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.17119166666667&amp;mlon=113.29515277777777&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.171192E113.295153</a><abbr title='date'>Tue Jun 30 17:08:14 2026</abbr>-->
+          </div>
+          <figcaption>ofm-2026-06-30-1708140C3835E534E7 - Tue Jun 30 17:08:14 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="ofm-2026-06-30-163140C722A3997400.JPG"
+             data-pswp-width="4032"
+             data-pswp-height="2689">
+             <img src="thumbnails/ofm-2026-06-30-163140C722A3997400.JPG" alt="ofm-2026-06-30-163140C722A3997400.JPG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 80 </abbr><abbr title='aperture'>F1.7799999713880652 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>61937/48806357s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.17120277777778&amp;mlon=113.2947138888889&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.171203E113.294714</a><abbr title='date'>Tue Jun 30 16:31:40 2026</abbr>-->
+          </div>
+          <figcaption>ofm-2026-06-30-163140C722A3997400 - Tue Jun 30 16:31:40 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="ofm-2026-05-25-15200789A93B5A1111.JPG"
+             data-pswp-width="4032"
+             data-pswp-height="2689">
+             <img src="thumbnails/ofm-2026-05-25-15200789A93B5A1111.JPG" alt="ofm-2026-05-25-15200789A93B5A1111.JPG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 80 </abbr><abbr title='aperture'>F1.7799999713880652 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>4873/58013066s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.128038888888888&amp;mlon=113.37575555555554&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.128039E113.375756</a><abbr title='date'>Mon May 25 18:13:23 2026</abbr>-->
+          </div>
+          <figcaption>ofm-2026-05-25-15200789A93B5A1111 - Mon May 25 18:13:23 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="ofm-2026-03-06-16392091A6BC3BB131.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2000">
+             <img src="thumbnails/ofm-2026-03-06-16392091A6BC3BB131.JPEG" alt="ofm-2026-03-06-16392091A6BC3BB131.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 80 </abbr><abbr title='aperture'>F1.7799999713880652 </abbr><abbr title='focal length'>7mm </abbr><abbr title='exposure'>1/6173s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=22.207630555555554&amp;mlon=114.02881944444444&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N22.207631E114.028819</a><abbr title='date'>Fri Mar  6 16:39:20 2026</abbr>-->
+          </div>
+          <figcaption>ofm-2026-03-06-16392091A6BC3BB131 - Fri Mar  6 16:39:20 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="ofm-2026-03-06-15200789A93B5A0000.JPG"
+             data-pswp-width="4032"
+             data-pswp-height="2688">
+             <img src="thumbnails/ofm-2026-03-06-15200789A93B5A0000.JPG" alt="ofm-2026-03-06-15200789A93B5A0000.JPG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 80 </abbr><abbr title='aperture'>F1.7799999713880652 </abbr><abbr title='focal length'>7mm </abbr><abbr title='exposure'>1/1855s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=22.321730555555554&amp;mlon=114.16900555555556&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N22.321731E114.169006</a><abbr title='date'>Fri Mar  6 11:06:11 2026</abbr>-->
+          </div>
+          <figcaption>ofm-2026-03-06-15200789A93B5A0000 - Fri Mar  6 11:06:11 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="ofm-2026-03-06-164827DD9B0B4D8753.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2000">
+             <img src="thumbnails/ofm-2026-03-06-164827DD9B0B4D8753.JPEG" alt="ofm-2026-03-06-164827DD9B0B4D8753.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 6.765mm f/1.78</abbr><div class='film-meta'><abbr title='film speed'>ISO 64 </abbr><abbr title='aperture'>F1.7799999713880652 </abbr><abbr title='focal length'>7mm </abbr><abbr title='exposure'>2026/28943437s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=22.207130555555555&amp;mlon=114.02829722222222&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N22.207131E114.028297</a><abbr title='date'>Fri Mar  6 16:48:27 2026</abbr>-->
+          </div>
+          <figcaption>ofm-2026-03-06-164827DD9B0B4D8753 - Fri Mar  6 16:48:27 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="ofm-2026-02-18-15200789A93B5A5257.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2000">
+             <img src="thumbnails/ofm-2026-02-18-15200789A93B5A5257.JPEG" alt="ofm-2026-02-18-15200789A93B5A5257.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>Apple iPhone 16 Pro</abbr>
+    <br><abbr title='camera make and model'>iPhone 16 Pro back camera 15.66mm f/2.8</abbr><div class='film-meta'><abbr title='film speed'>ISO 40 </abbr><abbr title='aperture'>F2.8 </abbr><abbr title='focal length'>16mm </abbr><abbr title='exposure'>1/167s</abbr></div><a title='location' href='https://www.openstreetmap.org/?mlat=23.538158333333335&amp;mlon=116.33618333333332&amp;zoom=12&amp;layers=M' target='_blank' class='map' >N23.538158E116.336183</a><abbr title='date'>Wed Feb 18 15:20:07 2026</abbr>-->
+          </div>
+          <figcaption>ofm-2026-02-18-15200789A93B5A5257 - Wed Feb 18 15:20:07 2026</figcaption>
+        </figure>
+  </div>
       </div>
 
 <footer>
