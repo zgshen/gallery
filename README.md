@@ -1,6 +1,11 @@
 ## 相册
 
-generate_json.bat 用于在子相册中生成 media.json。
+generate_json.sh/generate_json.bat 用于在子相册中生成 media.json。
+```
+# 用法
+# 新增图片已有的配置不会被修改
+./generate_json.sh ./pictures/doraemon
+```
 
 sigal.conf.py 配置文件。
 
