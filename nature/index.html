@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Nature</title>
+    <meta name="description" content="">
+    <meta name="author" content="&lt;a href=&#34;https://zgshen.github.io/&#34; target=&#34;_blank&#34;&gt;zguishen&lt;/a&gt;">
+    <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../static/photoswipe.css">
+  <script type="module">
+  import PhotoSwipeLightbox from '../static/photoswipe-lightbox.esm.min.js';
+  import PhotoSwipe from '../static/photoswipe.esm.min.js';
+  import PhotoSwipeDynamicCaption from '../static/photoswipe-dynamic-caption-plugin.esm.min.js';
+  import PhotoSwipeFullscreen from '../static/photoswipe-fullscreen.esm.min.js';
+  import PhotoSwipeVideoPlugin from '../static/photoswipe-video-plugin.esm.min.js';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.gallery',
+    children: '.thumbnail',
+    pswpModule: PhotoSwipe
+  });
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {type: 'auto'});
+  const fullscreenPlugin = new PhotoSwipeFullscreen(lightbox);
+  const videoPlugin = new PhotoSwipeVideoPlugin(lightbox, {autoplay: true});
+
+  lightbox.on('uiRegister', function() {
+    lightbox.pswp.ui.registerElement({
+      name: 'download-button',
+      order: 8,
+      isButton: true,
+      tagName: 'a',
+      html: {
+        isCustomSVG: true,
+        inner: '<path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" id="pswp__icn-download"/>',
+        outlineID: 'pswp__icn-download'
+      },
+      onInit: (el, pswp) => {
+        el.setAttribute('download', '');
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener');
+        pswp.on('change', () => {
+          if (pswp.currSlide.data.element.children[0].dataset.big) {
+            el.href = pswp.currSlide.data.element.children[0].dataset.big;
+          } else {
+            el.href = pswp.currSlide.data.src;
+          }
+        });
+      }
+    });
+  });
+
+  lightbox.init();
+  </script>
+    <link rel="stylesheet" href="../static/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1><a href="../">Licorice</a></h1>
+
+
+      <div class="content">
+  <div class="breadcrumb">
+    <h2>
+        <p href=".">Nature</p></h2>
+  </div>
+
+        
+  <div class="gallery">
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="20260930-DSCF7187.jpg"
+             data-pswp-width="3000"
+             data-pswp-height="2000">
+             <img src="thumbnails/20260930-DSCF7187.jpg" alt="20260930-DSCF7187.jpg"
+                  loading="eager" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <br>鹅<!---->
+          </div>
+          <figcaption>20260930-DSCF7187 - </figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="CAEE8033-5FEB-49F9-A489-4FDDFDA384BB.JPG"
+             data-pswp-width="1410"
+             data-pswp-height="941">
+             <img src="thumbnails/CAEE8033-5FEB-49F9-A489-4FDDFDA384BB.JPG" alt="CAEE8033-5FEB-49F9-A489-4FDDFDA384BB.JPG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>FUJIFILM X-T2</abbr>
+    <br><div class='film-meta'><abbr title='film speed'>ISO 400 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/100s</abbr></div><abbr title='date'>Sat Sep 26 15:08:57 2026</abbr>-->
+          </div>
+          <figcaption>CAEE8033-5FEB-49F9-A489-4FDDFDA384BB - Sat Sep 26 15:08:57 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="DSCF5968.jpeg"
+             data-pswp-width="1920"
+             data-pswp-height="1280">
+             <img src="thumbnails/DSCF5968.jpeg" alt="DSCF5968.jpeg"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <br>曼莎珠华<!--<abbr title='camera make and model'>FUJIFILM X-T2</abbr>
+    <br><div class='film-meta'><abbr title='film speed'>ISO 400 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/600s</abbr></div><abbr title='date'>Sat Sep  5 15:12:42 2026</abbr>-->
+          </div>
+          <figcaption>DSCF5968 - Sat Sep  5 15:12:42 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="DSCF6638.jpg"
+             data-pswp-width="2796"
+             data-pswp-height="1864">
+             <img src="thumbnails/DSCF6638.jpg" alt="DSCF6638.jpg"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>FUJIFILM X-T2</abbr>
+    <br><div class='film-meta'><abbr title='film speed'>ISO 800 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/125s</abbr></div><abbr title='date'>Thu Sep 17 18:41:22 2026</abbr>-->
+          </div>
+          <figcaption>DSCF6638 - Thu Sep 17 18:41:22 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="DSCF6750.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2000">
+             <img src="thumbnails/DSCF6750.JPEG" alt="DSCF6750.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>FUJIFILM X-T2</abbr>
+    <br><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/60s</abbr></div><abbr title='date'>Fri Sep 18 18:59:42 2026</abbr>-->
+          </div>
+          <figcaption>DSCF6750 - Fri Sep 18 18:59:42 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="DSCF6751.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2000">
+             <img src="thumbnails/DSCF6751.JPEG" alt="DSCF6751.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>FUJIFILM X-T2</abbr>
+    <br><div class='film-meta'><abbr title='film speed'>ISO 100 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/60s</abbr></div><abbr title='date'>Fri Sep 18 19:00:07 2026</abbr>-->
+          </div>
+          <figcaption>DSCF6751 - Fri Sep 18 19:00:07 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="DSCF7561.jpeg"
+             data-pswp-width="2808"
+             data-pswp-height="1872">
+             <img src="thumbnails/DSCF7561.jpeg" alt="DSCF7561.jpeg"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>FUJIFILM X-T2</abbr>
+    <br><div class='film-meta'><abbr title='film speed'>ISO 800 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/600s</abbr></div><abbr title='date'>Sun Oct  4 17:20:46 2026</abbr>-->
+          </div>
+          <figcaption>DSCF7561 - Sun Oct  4 17:20:46 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="DSCF8059.jpg"
+             data-pswp-width="2875"
+             data-pswp-height="1917">
+             <img src="thumbnails/DSCF8059.jpg" alt="DSCF8059.jpg"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>FUJIFILM X-T2</abbr>
+    <br><div class='film-meta'><abbr title='film speed'>ISO 200 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/250s</abbr></div><abbr title='date'>Sun Oct 11 17:07:28 2026</abbr>-->
+          </div>
+          <figcaption>DSCF8059 - Sun Oct 11 17:07:28 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="DSCF8231.jpg"
+             data-pswp-width="3000"
+             data-pswp-height="2000">
+             <img src="thumbnails/DSCF8231.jpg" alt="DSCF8231.jpg"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>FUJIFILM X-T2</abbr>
+    <br><div class='film-meta'><abbr title='film speed'>ISO 200 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/70s</abbr></div><abbr title='date'>Tue Oct 13 17:50:49 2026</abbr>-->
+          </div>
+          <figcaption>DSCF8231 - Tue Oct 13 17:50:49 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="DSCF8464.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2000">
+             <img src="thumbnails/DSCF8464.JPEG" alt="DSCF8464.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>FUJIFILM X-T2</abbr>
+    <br><div class='film-meta'><abbr title='film speed'>ISO 400 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/1500s</abbr></div><abbr title='date'>Sun Oct 18 16:49:05 2026</abbr>-->
+          </div>
+          <figcaption>DSCF8464 - Sun Oct 18 16:49:05 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="DSCF8467.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2000">
+             <img src="thumbnails/DSCF8467.JPEG" alt="DSCF8467.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>FUJIFILM X-T2</abbr>
+    <br><div class='film-meta'><abbr title='film speed'>ISO 400 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/480s</abbr></div><abbr title='date'>Sun Oct 18 16:52:22 2026</abbr>-->
+          </div>
+          <figcaption>DSCF8467 - Sun Oct 18 16:52:22 2026</figcaption>
+        </figure>
+        <figure class="gallery__img--secondary thumbnail">
+          <a href="IMG_8660.JPEG"
+             data-pswp-width="3000"
+             data-pswp-height="2000">
+             <img src="thumbnails/IMG_8660.JPEG" alt="IMG_8660.JPEG"
+                  loading="lazy" decoding="async" />
+          </a>
+          <div class="pswp-caption-content">
+            <!--<abbr title='camera make and model'>FUJIFILM X-T2</abbr>
+    <br><div class='film-meta'><abbr title='film speed'>ISO 200 </abbr><abbr title='focal length'>35mm </abbr><abbr title='exposure'>1/1300s</abbr></div><abbr title='date'>Tue Oct 13 17:47:58 2026</abbr>-->
+          </div>
+          <figcaption>IMG_8660 - Tue Oct 13 17:47:58 2026</figcaption>
+        </figure>
+  </div>
+      </div>
+
+<footer>
+  <p>
+      <span>&copy; <a href="https://zgshen.github.io/" target="_blank">zguishen</a></span>
+    <span>Generated by <a href="https://github.com/zgshen/sigal" target="_blank">sigal</a></span>
+  </p>
+</footer>  </div>
+  </body>
+</html>
