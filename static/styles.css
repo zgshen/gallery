@@ -134,10 +134,10 @@ figcaption {
 }
 
 .breadcrumb {
-  margin-left: 1.5em;
+  margin-left: 0;
 }
 #description {
-  margin-left: 1.7em;
+  margin-left: 0;
   font-size: 14px;
 }
 
@@ -186,9 +186,11 @@ figcaption {
   height: auto;
   float: left;
   padding-top:1em;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: 1.5em;
+  row-gap: 1.5em;
+  align-items: end;
 }
 .gallery a {
   line-height: 0;
@@ -208,6 +210,13 @@ figcaption {
   float: none;
 }
 
+.gallery > figure.thumbnail {
+  width: auto;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: left;
+}
+
 .menu-img.thumbnail > a,
 .gallery figure.thumbnail > a {
   display: block;
@@ -216,6 +225,11 @@ figcaption {
 .menu-img.thumbnail > a > img,
 .gallery figure.thumbnail > a > img {
   height: auto;
+}
+
+.gallery > figure.thumbnail > a > img {
+  max-width: 100%;
+  margin: 0;
 }
 
 .gallery__title {
@@ -230,6 +244,7 @@ figcaption {
 footer {
   width:100%;
   float:left;
+  margin-top: 1em;
 }
 
 footer p {
@@ -252,6 +267,9 @@ footer span:not(:last-child):after {
 
 
 @media screen and (max-width: 500px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .menu-img,
   .gallery__img--main,
   .gallery__img--secondary {
@@ -261,6 +279,9 @@ footer span:not(:last-child):after {
 
 
 @media screen and (max-width: 300px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
   .menu-img,
   .gallery__img--main,
   .gallery__img--secondary {
